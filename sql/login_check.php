@@ -10,13 +10,13 @@ $result = mysqli_query($conn, $sql);
 $num_row = mysqli_num_rows($result);
 $row=$result->fetch_assoc();
 if( $num_row == 1 ) {
-	if($row['level_id']=='1'){
+	if($row['level']=='1'){
 		echo '1';
 	$_SESSION['person_id'] = $row['c_id'];
 	$_SESSION['person_name'] = $row['fristname']." ".$row['lastname']; 
 	$_SESSION['level_id'] = $row['level'];
 	}
-	elseif($row['level_id']=='2'){
+	elseif($row['level']=='2'){
 		echo '2';
 	$_SESSION['person_id'] = $row['c_id'];
 	$_SESSION['person_name'] = $row['fristname']." ".$row['lastname'];
