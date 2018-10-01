@@ -9,13 +9,13 @@
   <title></title>
 
   <!-- Bootstrap -->
-    <link rel="stylesheet" href="asset\css\bootstrap.css">
+  <link rel="stylesheet" href="../asset\css\bootstrap.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <script src="asset/js/jquery-3.2.1.min.js"></script>
-    <script src="asset/js/Chart.min.js"></script>
-    <script src="asset/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
-    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+    <script src="../asset/js/jquery-3.2.1.min.js"></script>
+    <script src="../asset/js/Chart.min.js"></script>
+    <script src="../asset/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css" />
+    <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,7 +30,7 @@
     var info = 'm_id=' + m_id;
     $.ajax({
       type: "POST",
-      url: "include/update_form_material.php",
+      url: "../include/update_form_material.php",
       data: info,
       success: function (data) {
         $("#display_update_form_material").html(data);

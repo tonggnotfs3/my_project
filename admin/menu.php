@@ -9,7 +9,7 @@ background: linear-gradient(to right, rgba(204,218,255,1) 0%, rgba(179,191,250,1
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccdaff', endColorstr='#99bcfa', GradientType=1 );/* IE6-9 */;">
   <div class="container" align="center">
 
-    <a href="index.php"><img style="width:15%;height:15%;font-size: 30px" src="pic/logo.png"><span style=" color:#FFFFFF;font-family: 'Dosis', sans-serif;font-size: 30px">KPU
+    <a href="index.php"><img style="width:15%;height:15%;font-size: 30px" src="../pic/logo.png"><span style=" color:#FFFFFF;font-family: 'Dosis', sans-serif;font-size: 30px">KPU
         Supply LTD., PART.</span></a>
   </div>
 </div>

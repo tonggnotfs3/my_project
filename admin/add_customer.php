@@ -8,13 +8,13 @@
     <title>เพิ่มข้อมูลลูกค้า</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="asset\css\bootstrap.css">
+    <link rel="stylesheet" href="../asset\css\bootstrap.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <script src="asset/js/jquery-3.2.1.min.js"></script>
-    <script src="asset/js/Chart.min.js"></script>
-    <script src="asset/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
-    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+    <script src="../asset/js/jquery-3.2.1.min.js"></script>
+    <script src="../asset/js/Chart.min.js"></script>
+    <script src="../asset/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css" />
+    <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,7 +29,7 @@
       function selectProvince() {
         $.ajax({
           type: "POST",
-          url: "select_province.php",
+          url: "../select_province.php",
           success: function(data) {
             $("#province").html(data);
           }
@@ -43,7 +43,7 @@
           data: {
             provinceID: $(this).val()
           },
-          url: "select_amphur.php",
+          url: "../select_amphur.php",
           success: function(data) {
             $("#amphur").html(data);
           }
@@ -63,7 +63,7 @@
           data: {
             amphurID: $(this).val()
           },
-          url: "select_districts.php",
+          url: "../select_districts.php",
           success: function(data) {
             $("#districts").html(data);
           }
@@ -170,7 +170,7 @@
               var fData = new FormData(document.getElementById("register_cus"));
                $.ajax({
         'type':"POST",
-        'url':"sql/insert_customer.php",
+        'url':"../sql/insert_customer.php",
         'data':fData,
         'contentType':false,
         'processData':false,

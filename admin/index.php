@@ -8,13 +8,13 @@
     <title></title>
 
   <!-- Bootstrap -->
-    <link rel="stylesheet" href="asset\css\bootstrap.css">
+    <link rel="stylesheet" href="../asset\css\bootstrap.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <script src="asset/js/jquery-3.2.1.min.js"></script>
-    <script src="asset/js/Chart.min.js"></script>
-    <script src="asset/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
-    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+    <script src="../asset/js/jquery-3.2.1.min.js"></script>
+    <script src="../asset/js/Chart.min.js"></script>
+    <script src="../asset/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css" />
+    <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,7 +40,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <center><img src="pic/pic1.jpg"  style="width:40%;" align="middle"></center>
+      <center><img src="../pic/pic1.jpg"  style="width:40%;" align="middle"></center>
       <div class="carousel-caption">
         <h3>ทดสอบข่าว1</h3>
         <p>ทดสอบข่าว1</p>
@@ -48,7 +48,7 @@
     </div>
 
     <div class="item">
-      <center><img src="pic/pic2.jpg"  style="width:40%;" align="middle"></center>
+      <center><img src="../pic/pic2.jpg"  style="width:40%;" align="middle"></center>
       <div class="carousel-caption">
         <h3>ทดสอบข่าว2</h3>
         <p>ทดสอบข่าว2</p>
@@ -56,7 +56,7 @@
     </div>
 
     <div class="item">
-    <center><img src="pic/pic3.jpg"  style="width:40%;" align="middle"></center>
+    <center><img src="../pic/pic3.jpg"  style="width:40%;" align="middle"></center>
       <div class="carousel-caption">
         <h3>ทดาสอบข่าว3</h3>
         <p>ทดสอบข่าว2</p>
