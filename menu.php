@@ -38,48 +38,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccdaff', end
       </li>
     </ul>
 
-    <ul class="nav navbar-nav navbar-left">
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">ข้อมูลวัตถุดิบ
-          <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="add_matti.php">เพิ่มข้อมูลวัตถุดิบ</a></li>
-          <li><a href="display_matti.php">ดู/แก้ไขข้อมูลวัตถุดิบ</a></li>
-        </ul>
-      </li>
-    </ul>
 
-    <ul class="nav navbar-nav navbar-left">
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">ข้อมูลลูกค้า
-          <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="add_customer.php">เพิ่มข้อมูลลูกค้า</a></li>
-          <li><a href="display_customer.php">ดู/แก้ไข้ข้อมูลลูกค้า</a></li>
-        </ul>
-      </li>
-    </ul>
 
-    <ul class="nav navbar-nav navbar-left">
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">ข้อมูลการจองสินค้า
-          <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="testadd_booking.php">เพิ่มข้อจองสินค้า</a></li>
-          <li><a href="display_booking.php">ดู/แก้ไข้ข้อมูลจองสินค้า</a></li>
-        </ul>
-      </li>
-    </ul>
 
-    <ul class="nav navbar-nav navbar-left">
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">รายงาน
-          <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="report_product.php">รายงานยอดขาย</a></li>
-        </ul>
-      </li>
-    </ul>
+
+
+
     <ul class="nav navbar-nav navbar-right">
       <?php
 if(isset($_SESSION['person_id']) ){
