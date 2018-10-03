@@ -9,13 +9,14 @@
   <title></title>
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="../asset\css\bootstrap.css">
+  <link rel="stylesheet" href="asset\css\bootstrap.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <script src="../asset/js/jquery-3.2.1.min.js"></script>
-    <script src="../asset/js/Chart.min.js"></script>
-    <script src="../asset/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css" />
-    <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
+    <script src="asset/js/jquery-3.2.1.min.js"></script>
+    <script src="asset/js/Chart.min.js"></script>
+    <script src="asset/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
+    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,7 +30,7 @@
     var info = 'pic_url=' + pic_url;
     $.ajax({
       type: "POST",
-      url: "../sql/display_p_pic_admin.php",
+      url: "sql/display_p_pic.php",
       data: info,
       success: function (data) {
         $("#display_p_picture").html(data);
@@ -95,7 +96,7 @@
                 <?php echo $row['p_detail'];?>
               </td>
               <td>
-                <img src="<?php echo "../".$row['p_pic']?>" class="img-thumbnail" alt="Produc picture" data-toggle="modal"
+                <img src="<?php echo $row['p_pic']?>" class="img-thumbnail" alt="Produc picture" data-toggle="modal"
                   data-target="#display_p_pic" style="width:50px;height:50px;" onclick="receipt_click('<?php echo $row['p_pic'];?>')">
               </td>
               <td>

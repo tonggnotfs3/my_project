@@ -28,13 +28,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccdaff', end
     </ul>
 
     <ul class="nav navbar-nav navbar-left">
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">ข้อมูลสินค้า
-          <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="add_product.php">เพิ่มข้อมูลสินค้า</a></li>
-          <li><a href="display_product.php">ดู/แก้ไขข้อมูลสินค้า</a></li>
-        </ul>
+      <li>
+        <a href="display_product.php" href="#">ข้อมูลสินค้า</a>
+
       </li>
     </ul>
 
