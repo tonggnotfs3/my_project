@@ -14,7 +14,7 @@
     <script src="asset/js/jquery-3.2.1.min.js"></script>
     <script src="asset/js/Chart.min.js"></script>
     <script src="asset/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
+    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css">
     <script type="text/javascript" src="DataTables/datatables.min.js"></script>
 
 
@@ -78,7 +78,7 @@
               <th>รูปสินค้า</th>
               <th>วัสดุที่ใช้</th>
               <th>จำนวนนคงเหลือ</th>
-              <th>ราคา</th>>
+              <th>ราคา</th>
             </tr>
           </thead>
           <tbody>
