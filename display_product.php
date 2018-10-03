@@ -78,9 +78,7 @@
               <th>รูปสินค้า</th>
               <th>วัสดุที่ใช้</th>
               <th>จำนวนนคงเหลือ</th>
-              <th>ราคา</th>
-              <th>แก้ไข</th>
-              <th>ลบ</th>
+              <th>ราคา</th>>
             </tr>
           </thead>
           <tbody>
@@ -108,12 +106,6 @@
               <td>
                 <?php echo $row['p_price'];?>
               </td>
-              <td>
-                <button type="button" data-toggle="modal" data-target="#edit_p" class="btn btn-success" onclick="update_product_click(<?php echo $row['p_id'];?>)">แก้ไข</button>
-              </td>
-              <th>
-                <a href="sql/delete_product.php?p_id=<?php echo $row['p_id'];?>" class="btn btn-danger" onclick="return confirm('คุณต้องการลบข้อมูลใช่หรือไม่?')">ลบ</a>
-              </th>
             </tr>
             <?php } ?>
           </tbody>
