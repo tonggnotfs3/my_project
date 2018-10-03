@@ -30,7 +30,7 @@
         var info = 'b_id=' + b_id;
         $.ajax({
             type: "POST",
-            url: "include/update_form_booking.php",
+            url: "../include/update_form_booking.php",
             data: info,
             success: function (data) {
                 $("#display_update_form_booking").html(data);

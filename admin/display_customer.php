@@ -29,7 +29,7 @@
     var info = 'c_id=' + c_id;
     $.ajax({
       type: "POST",
-      url: "include/update_form_customer.php",
+      url: "../include/update_form_customer.php",
       data: info,
       success: function (data) {
         $("#display_update_form_customer").html(data);
