@@ -59,7 +59,7 @@ if (!$objCon) {
           </div>
         </div>
         <form action="update.php" method="post">
-<table class="table table-hover">
+<table class="table table-striped">
   <tr>
     <td width="101">ProductID</td>
     <td width="82">ProductName</td>
@@ -95,23 +95,27 @@ if (!$objCon) {
   }
   ?>
 </table>
-<br>
-<table width="400"  border="0">
-  <tr>
-  <td><input type="submit" value="Update"></td>
-  <td align="right">Sum Total <?php echo number_format($SumTotal,2);?></td>
-  </tr>
-  </table>
+
+
+
+  <div class="col-md-6"><input class="btn btn-primary" type="submit" value="Update">
+  ยอดรวมทั้งสิ้น <?php echo number_format($SumTotal,2);?></div>
+
+
 </form>
-<br><a href="product.php">Go to Product</a>
+<div class="col-md-6" align="right">
+<a class="btn btn-success" href="product.php">Go to Product</a>
 <?php
 	if($SumTotal > 0)
 	{
 ?>
-	| <a href="checkout.php">CheckOut</a>
+	| <a  class="btn btn-info" href="checkout.php">CheckOut</a>
 <?php
 	}
 ?>
+</div>
+<br>
+<br>
 <?php
 mysqli_close($objCon);
 ?>

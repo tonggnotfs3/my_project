@@ -34,7 +34,7 @@ if (!$objCon) {
 	  if($_SESSION["strProductID"][$i] != "")
 	  {
 			  $strSQL = "
-				INSERT INTO orders_detail (OrderID,ProductID,Qty)
+				INSERT INTO order_detail (OrderID,p_id,qty)
 				VALUES
 				('".$strOrderID."','".$_SESSION["strProductID"][$i]."','".$_SESSION["strQty"][$i]."') 
 			  ";
