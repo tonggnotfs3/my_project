@@ -56,7 +56,7 @@
             <tbody>
               <?php while($row=$result->fetch_assoc()){?>
               <tr>
-              <form action="order.php" method="post">
+              <form  action="order.php" method="post">
                 <td>
                   <?php echo $row['p_id'];?>
                 </td>
@@ -80,7 +80,7 @@
                   <?php echo $row['p_price'];?>
                 </td>
                 <th>
-                <input type="hidden" name="txtProductID" value="<?php echo $objResult["ProductID"];?>" size="2"> <input type="text" name="txtQty" value="1" size="2"> <input class="btn btn-info" type="submit" value="สั่ง"></td>
+                <input type="hidden" name="txtProductID" value="<?php echo $row['p_id'];?>" size="2"> <input class="form-control" type="text" name="txtQty" value="1" size="2"> <input class="btn btn-info" type="submit" value="สั่ง"></td>
                 </th>
                 </form>
               </tr>
