@@ -1,7 +1,8 @@
-<?php session_start();?>
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +10,7 @@
   <title></title>
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="..\..\asset\css\bootstrap.css">
+    <link rel="stylesheet" href="..\..\asset\css\bootstrap.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="../../asset/js/jquery-3.2.1.min.js"></script>
     <script src="../../asset/js/Chart.min.js"></script>
@@ -24,11 +25,9 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-
-
 <body>
-  <?php include("../menu.php"); ?>
-  <?php
+<?php include("../menu.php"); ?>
+<?php
 
 if(!isset($_SESSION["intLine"]))
 {
@@ -42,24 +41,14 @@ $userPassword = "";
 $dbName = "my_project";
 
 $objCon = mysqli_connect($serverName,$userName,$userPassword,$dbName);
-mysqli_set_charset($objCon,"utf8");
 if (!$objCon) {
     echo $objCon->connect_error;
     exit();
-    
-  }
+}
+mysqli_set_charset($objCon,"utf8");
 ?>
-  <div class="container">
-    <div class="col-md-12">
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <div class="panel-title">
-            <h4>
-              <span aria-hidden="true"></span> ข้อมูสินค้า</h4>
-          </div>
-        </div>
-        <form action="update.php" method="post">
-<table class="table table-hover">
+  <form action="update.php" method="post">
+<table width="400"  border="1">
   <tr>
     <td width="101">ProductID</td>
     <td width="82">ProductName</td>
@@ -115,12 +104,7 @@ if (!$objCon) {
 <?php
 mysqli_close($objCon);
 ?>
-      </div>
-    </div>
-  </div>
-
-
-
 </body>
-
 </html>
+
+<?php /* This code download from www.ThaiCreate.Com */ ?>
