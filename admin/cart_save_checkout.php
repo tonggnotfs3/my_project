@@ -44,7 +44,10 @@ if (!$objCon) {
 
 mysqli_close($objCon);
 
-session_destroy();
+//session_destroy();
+unset ($_SESSION["intLine"]);
+unset ($_SESSION["strProductID"]);
+unset ($_SESSION["strQty"]);
 
 header("location:cart_view_order.php?OrderID=".$strOrderID);
 ?>
