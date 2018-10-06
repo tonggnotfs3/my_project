@@ -46,7 +46,7 @@ mysqli_close($objCon);
 
 session_destroy();
 
-header("location:finish_order.php?OrderID=".$strOrderID);
+header("location:cart_view_order.php?OrderID=".$strOrderID);
 ?>
 
 <?php /* This code download from www.ThaiCreate.Com */ ?>

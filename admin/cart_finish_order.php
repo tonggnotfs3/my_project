@@ -6,7 +6,7 @@
 <body>
 Finish Your Order. <br><br>
 
-<a href="view_order.php?OrderID=<?php echo $_GET["OrderID"];?>">View Order</a>
+<a href="cart_view_order.php?OrderID=<?php echo $_GET["OrderID"];?>">View Order</a>
 
 </body>
 </html>

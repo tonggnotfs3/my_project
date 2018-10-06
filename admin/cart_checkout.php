@@ -9,13 +9,13 @@
   <title></title>
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="..\..\asset\css\bootstrap.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <script src="../../asset/js/jquery-3.2.1.min.js"></script>
-  <script src="../../asset/js/Chart.min.js"></script>
-  <script src="../../asset/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../../DataTables/datatables.min.css" />
-  <script type="text/javascript" src="../../DataTables/datatables.min.js"></script>
+  <link rel="stylesheet" href="../asset\css\bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="../asset/js/jquery-3.2.1.min.js"></script>
+    <script src="../asset/js/Chart.min.js"></script>
+    <script src="../asset/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css" />
+    <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,7 +27,7 @@
 
 
 <body>
-  <?php include("../menu.php"); ?>
+  <?php include("menu.php"); ?>
   <?php
 
 if(!isset($_SESSION["intLine"]))
@@ -111,7 +111,7 @@ if (!$objCon) {
         </div>
         <br>
         <div align="right">
-          <form class="form-inline" name="form1" method="post" action="save_checkout.php">
+          <form class="form-inline" name="form1" method="post" action="cart_save_checkout.php">
             <div class="form-group">
               <label for="p_id">รหัสลูกค้า:</label>
               <input type="text" class="form-control" name="p_id" id="p_id">

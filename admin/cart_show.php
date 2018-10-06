@@ -9,13 +9,13 @@
   <title></title>
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="..\..\asset\css\bootstrap.css">
+  <link rel="stylesheet" href="..\asset\css\bootstrap.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <script src="../../asset/js/jquery-3.2.1.min.js"></script>
-    <script src="../../asset/js/Chart.min.js"></script>
-    <script src="../../asset/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../DataTables/datatables.min.css" />
-    <script type="text/javascript" src="../../DataTables/datatables.min.js"></script>
+    <script src="../asset/js/jquery-3.2.1.min.js"></script>
+    <script src="../asset/js/Chart.min.js"></script>
+    <script src="../asset/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css" />
+    <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,7 +27,7 @@
 
 
 <body>
-  <?php include("../menu.php"); ?>
+  <?php include("menu.php"); ?>
   <?php
 
 if(!isset($_SESSION["intLine"]))
@@ -88,7 +88,7 @@ if (!$objCon) {
 		<td><?=$objResult["p_price"];?></td>
 		<td><input type="text" name="txtQty<?php echo $i;?>" value="<?php echo $_SESSION["strQty"][$i];?>" size="2"></td>
 		<td><?=number_format($Total,2);?></td>
-		<td><a href="delete.php?Line=<?=$i;?>">x</a></td>
+		<td><a href="cart_delete.php?Line=<?=$i;?>">x</a></td>
 	  </tr>
 	  <?php
 	  }
@@ -104,12 +104,12 @@ if (!$objCon) {
 
 </form>
 <div class="col-md-6" align="right">
-<a class="btn btn-success" href="product.php">Go to Product</a>
+<a class="btn btn-success" href="cart_product.php">Go to Product</a>
 <?php
 	if($SumTotal > 0)
 	{
 ?>
-	| <a  class="btn btn-info" href="checkout.php">CheckOut</a>
+	| <a  class="btn btn-info" href="cart_checkout.php">CheckOut</a>
 <?php
 	}
 ?>

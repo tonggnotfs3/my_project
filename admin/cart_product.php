@@ -9,13 +9,14 @@
   <title></title>
 
   <!-- Bootstrap -->
-    <link rel="stylesheet" href="..\..\asset\css\bootstrap.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="..\asset\css\bootstrap.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <script src="../../asset/js/jquery-3.2.1.min.js"></script>
-    <script src="../../asset/js/Chart.min.js"></script>
-    <script src="../../asset/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../DataTables/datatables.min.css" />
-    <script type="text/javascript" src="../../DataTables/datatables.min.js"></script>
+    <script src="../asset/js/jquery-3.2.1.min.js"></script>
+    <script src="../asset/js/Chart.min.js"></script>
+    <script src="../asset/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css" />
+    <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,7 +27,7 @@
 </head>
 
 <body>
-  <?php include("../menu.php"); ?>
+  <?php include("menu.php"); ?>
   <<?php require_once '../connect.php' ; $sql="SELECT * FROM `product` WHERE `p_status`= 1 ORDER BY `p_id` ASC" ; $result=$conn->query($sql);
     ?>
 
@@ -56,7 +57,7 @@
             <tbody>
               <?php while($row=$result->fetch_assoc()){?>
               <tr>
-              <form  action="order.php" method="post">
+              <form  action="cart_order.php" method="post">
                 <td>
                   <?php echo $row['p_id'];?>
                 </td>
@@ -67,7 +68,7 @@
                   <?php echo $row['p_detail'];?>
                 </td>
                 <td>
-                  <img src="<?php echo "../../".$row['p_pic']?>" class="img-thumbnail" alt="Product picture" data-toggle="modal"
+                  <img src="<?php echo "../".$row['p_pic']?>" class="img-thumbnail" alt="Product picture" data-toggle="modal"
                     data-target="#display_p_pic" style="width:50px;height:50px;" onclick="receipt_click('<?php echo $row['p_pic'];?>')">
                 </td>
                 <td>
