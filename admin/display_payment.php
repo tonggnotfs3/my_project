@@ -86,7 +86,7 @@
                 <?php echo $row['pay_type_name'];?>
               </td>
               <td>
-                <img src="<?php echo $row['pay_pic']?>" class="img-thumbnail" alt="Produc picture" data-toggle="modal"
+                <img src="<?php echo "../".$row['pay_pic']?>" class="img-thumbnail" alt="Produc picture" data-toggle="modal"
                   data-target="#display_p_pic" style="width:50px;height:50px;" onclick="receipt_click('<?php echo $row['pay_pic'];?>')">
               </td>
               <td>
@@ -96,7 +96,7 @@
                 <?php
                   if($row['pay_status'] == 0){
                 ?>
-                <a href="sql/update_status_payment.php?pay_id=<?php echo $row['pay_id'];?>" class="btn btn-danger"
+                <a href="../sql/update_status_payment.php?pay_id=<?php echo $row['pay_id'];?>" class="btn btn-danger"
                   onclick="return confirm('คุณต้องการยืนยันใช่หรือไม่?')">ยืนยัน</a>
                 <?php }
                   else{ ?>
