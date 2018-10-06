@@ -35,7 +35,7 @@
         <?php
         $customerID = $_SESSION['person_id']; 
         require_once 'connect.php';
-        $sql="SELECT * FROM `orders` WHERE customer_id = $customerID";
+        $sql="SELECT * FROM `orders` WHERE customer_id = $customerID ORDER BY `orders`.`OrderDate` DESC";
         $result=$conn->query($sql);
       ?>
 
@@ -52,7 +52,6 @@
                         <tr>
                             <th>รหัสการจอง</th>
                             <th>วันที่จอง</th>
-                            <th>ยอดรวมทั้งสิ้น</th>
                             <th>ลายละเอียด</th>
                         </tr>
                     </thead>
