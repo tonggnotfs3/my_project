@@ -29,7 +29,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccdaff', end
 
     <ul class="nav navbar-nav navbar-left">
       <li>
-        <a href="display_product.php" href="#">ข้อมูลสินค้า</a>
+        <a href="display_product.php">ข้อมูลสินค้า</a>
+
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-left">
+      <li>
+        <a href="display_booking.php">ประวัติการจอง</a>
 
       </li>
     </ul>
