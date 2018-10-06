@@ -9,13 +9,13 @@
     <title></title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="asset\css\bootstrap.css">
+    <link rel="stylesheet" href="..\asset\css\bootstrap.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <script src="asset/js/jquery-3.2.1.min.js"></script>
-    <script src="asset/js/Chart.min.js"></script>
-    <script src="asset/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
-    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+    <script src="../asset/js/jquery-3.2.1.min.js"></script>
+    <script src="../asset/js/Chart.min.js"></script>
+    <script src="../asset/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css" />
+    <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,7 +35,7 @@
         <?php
         $customerID = $_SESSION['person_id']; 
         require_once 'connect.php';
-        $sql="SELECT * FROM `orders` WHERE customer_id = $customerID";
+        $sql="SELECT * FROM orders,customer WHERE orders.customer_id = customer.c_id";
         $result=$conn->query($sql);
       ?>
 
@@ -52,8 +52,10 @@
                         <tr>
                             <th>รหัสการจอง</th>
                             <th>วันที่จอง</th>
+                            <th>ลูกค้า</th>
+                            <th>บริษัท</th>
+                            <th>เบอร์</th>
                             <th>ยอดรวมทั้งสิ้น</th>
-                            <th>ลายละเอียด</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -66,6 +68,15 @@
                                 <?php echo $row['OrderDate'];?>
                             </td>
                             <td>
+                                <?php echo $row['fristname'];?>&nbsp;&nbsp;<?php echo $row['lastname'];?>
+                            </td>
+                            <td>
+                                <?php echo $row['department'];?>
+                            </td>
+                            <td>
+                                <?php echo $row['tel'];?>
+                            </td>
+                            <td>
                                 <a href="display_booking_detail.php?StrOrderID=<?php echo $row['OrderID'];?>" class="btn btn-info">ลายละเอียด</a>
                             </td>
                         </tr>
@@ -76,22 +87,6 @@
         </div>
     </div>
 
-    <div id="m_edit" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">ข้อมูลการจอง</h4>
-                </div>
-                <div class="modal-body" id="display_update_form_booking">
-
-                </div>
-            </div>
-
-        </div>
-    </div>
 
     <script>
         $(document).ready(function () {
