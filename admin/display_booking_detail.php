@@ -94,6 +94,11 @@ while($objResult2 = mysqli_fetch_array($objQuery2,MYSQLI_ASSOC))
  }
   ?>
                 </table>
+                <div align="right">
+                    ยอดทั้งหมด
+                    <?php echo number_format($SumTotal,2);?> บาท <br>
+                    <br>
+                </div>
                 <br>
             </div>
         </div>
