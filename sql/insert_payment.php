@@ -30,7 +30,7 @@
                                         $pay_book_id = $_POST['pay_book_id'];
 
 
-                                        $sql = "INSERT INTO `payment` (`pay_booking_id`, `pay_pic`, `pay_type`, `pay_cus_id`, `pay_status`, `pay_delete`) VALUES ('$pay_book_id', '$fname', '$pay_type', '$pay_c_id', '0', '1');";
+                                        $sql = "INSERT INTO `payment` (`pay_booking_id`, `pay_pic`, `pay_type`, `pay_cus_id`, `pay_status`, `pay_delete`) VALUES ('$pay_book_id', '$fname', '$pay_type', '$pay_c_id', '2', '1');";
                                         $data = mysqli_query($conn,$sql);
 
                     

@@ -10,12 +10,12 @@
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="../asset\css\bootstrap.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <script src="../asset/js/jquery-3.2.1.min.js"></script>
-    <script src="../asset/js/Chart.min.js"></script>
-    <script src="../asset/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css" />
-    <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="../asset/js/jquery-3.2.1.min.js"></script>
+  <script src="../asset/js/Chart.min.js"></script>
+  <script src="../asset/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css" />
+  <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
 
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -46,7 +46,7 @@
 
     <?php 
         require_once 'connect.php';
-        $sql="SELECT * FROM `payment`,pay_status,pay_type,customer WHERE payment.pay_type = pay_type.pay_type_id AND pay_status.pay_status_id = payment.pay_status AND customer.c_id = payment.pay_booking_id AND payment.pay_delete = 1";
+        $sql="SELECT payment.pay_id,payment.pay_booking_id,payment.pay_pic,pay_type.pay_type_name,customer.fristname,customer.lastname,pay_status.pay_status_name,pay_status.pay_status_id,payment.pay_status FROM payment,customer,pay_type,pay_status WHERE payment.pay_cus_id = customer.c_id AND payment.pay_type = pay_type.pay_type_id AND payment.pay_status = pay_status.pay_status_id AND payment.pay_delete = 1";
         $result=$conn->query($sql);
       ?>
 
@@ -73,7 +73,7 @@
             <?php while($row=$result->fetch_assoc()){?>
             <tr>
               <td>
-                <?php echo $row[''];?>
+                <?php echo $row['pay_booking_id'];?>
               </td>
               <td>
                 <?php echo $row['fristname'];?>
@@ -85,8 +85,9 @@
                 <?php echo $row['pay_type_name'];?>
               </td>
               <td>
-                <img src="<?php echo "../".$row['pay_pic']?>" class="img-thumbnail" alt="Produc picture" data-toggle="modal"
-                  data-target="#display_p_pic" style="width:50px;height:50px;" onclick="receipt_click('<?php echo $row['pay_pic'];?>')">
+                <form class="form-horizontal" id="update_payment_status">
+                  <img src="<?php echo " ../".$row['pay_pic']?>" class="img-thumbnail" alt="Produc picture" data-toggle="modal"
+                    data-target="#display_p_pic" style="width:50px;height:50px;" onclick="receipt_click('<?php echo $row['pay_pic'];?>')">
               </td>
               <td>
                 <input type="hidden" class="form-control" name="pay_id" id="pay_id" value=<?php echo $row['pay_id'];?>>
@@ -98,6 +99,9 @@
                 </select>
                 <button type="submit" class="btn btn-default">เพิ่มข้อมูล</button>
                 </form>
+              </td>
+              <td>
+
               </td>
             </tr>
             <?php } ?>
