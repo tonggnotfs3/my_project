@@ -90,6 +90,7 @@ if (!$objCon) {
         <br>
 
         <table class="table table-striped">
+        <thead>
           <tr>
             <td width="101">ProductID</td>
             <td width="82">ProductName</td>
@@ -97,6 +98,7 @@ if (!$objCon) {
             <td width="79">Qty</td>
             <td width="79">Total</td>
           </tr>
+          </thead>
           <?php
 
 $Total = 0;
