@@ -9,13 +9,13 @@
     <title></title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../asset\css\bootstrap.css">
+    <link rel="stylesheet" href="asset\css\bootstrap.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <script src="../asset/js/jquery-3.2.1.min.js"></script>
-    <script src="../asset/js/Chart.min.js"></script>
-    <script src="../asset/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css" />
-    <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
+    <script src="asset/js/jquery-3.2.1.min.js"></script>
+    <script src="asset/js/Chart.min.js"></script>
+    <script src="asset/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
+    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,28 +25,17 @@
     <![endif]-->
 </head>
 
-<script type="text/javascript">
-    function update_booking_click(b_id) {
-        var info = 'b_id=' + b_id;
-        $.ajax({
-            type: "POST",
-            url: "../include/update_form_booking.php",
-            data: info,
-            success: function (data) {
-                $("#display_update_form_booking").html(data);
-            }
-        });
-    }
-</script>
+
 
 <body>
     <?php include("menu.php"); ?>
     <div class="container">
 
 
-            <?php 
+        <?php
+        $customerID = $_SESSION['person_id']; 
         require_once 'connect.php';
-        $sql="SELECT booking.b_id,customer.fristname,customer.lastname,customer.department,product.p_name,booking.b_amount,booking.b_paystatus FROM booking,customer,product WHERE booking.b_cus_id = customer.c_id AND booking.b_pro_id = product.p_id AND booking.b_status = 1";
+        $sql="SELECT * FROM `orders` WHERE customer_id = $customerID";
         $result=$conn->query($sql);
       ?>
 
@@ -62,62 +51,23 @@
                     <thead>
                         <tr>
                             <th>รหัสการจอง</th>
-                            <th>ชื่อลูกค้า</th>
-                            <th>นามสกุล</th>
-                            <th>บริษัท</th>
-                            <th>ชื่อสินค้า</th>
-                            <th>จำนวน</th>
-                            <th>สถานะการชำระเงิน</th>
-                            <th>การชำระเงิน</th>
-                            <th>ลบ</th>
-                            <th>แก้ไข</th>
+                            <th>วันที่จอง</th>
+                            <th>ยอดรวมทั้งสิ้น</th>
+                            <th>ลายละเอียด</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php while($row=$result->fetch_assoc()){?>
                         <tr>
                             <td>
-                                <?php echo $row['b_id'];?>
+                                <?php echo $row['OrderID'];?>
                             </td>
                             <td>
-                                <?php echo $row['fristname'];?>
+                                <?php echo $row['OrderDate'];?>
                             </td>
                             <td>
-                                <?php echo $row['lastname'];?>
+                                <a href="display_booking_detail.php?StrOrderID=<?php echo $row['OrderID'];?>" class="btn btn-info">ลายละเอียด</a>
                             </td>
-                            <td>
-                                <?php echo $row['department'];?>
-                            </td>
-                            <td>
-                                <?php echo $row['p_name'];?>
-                            </td>
-                            <td>
-                                <?php echo $row['b_amount'];?>
-                            </td>
-                            <td>
-                                <?php echo $row['b_paystatus'];?>
-                            </td>
-                            <td>
-                                <?php if($row['b_paystatus'] == 0){?>
-                                <a href="sql/pay_deposit.php?b_id=<?php echo $row['b_id'];?>" class="btn btn-warning"
-                                    onclick="return confirm('ยืนยันการชำระเงินใช่หรือไม่ ?')">ชำระเงินค่ามันจำ</a>
-                                <?php }
-                                elseif($row['b_paystatus'] == 1){ ?>
-                                <a href="sql/pay_total.php?b_id=<?php echo $row['b_id'];?>" class="btn btn-primary"
-                                    onclick="return confirm('ยืนยันการชำระเงินใช่หรือไม่ ?')">ชำระเงินทั้งหมด</a>
-                                <?php }
-                                else{ ?>
-                                <button type="button" data-toggle="modal" class="btn btn-info disabled">ชำระเงินแล้ว</button>
-                                <?php } ?>
-                            </td>
-                            <td>
-                                <button type="button" data-toggle="modal" data-target="#m_edit" class="btn btn-success"
-                                    onclick="update_booking_click(<?php echo $row['b_id'];?>)">แก้ไข</button>
-                            </td>
-                            <th>
-                                <a href="sql/delete_booking.php?b_id=<?php echo $row['b_id'];?>" class="btn btn-danger"
-                                    onclick="return confirm('คุณต้องการลบข้อมูลใช่หรือไม่?')">ลบ</a>
-                            </th>
                         </tr>
                         <?php } ?>
                     </tbody>
