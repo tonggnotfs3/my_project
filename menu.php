@@ -20,7 +20,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccdaff', end
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">การชำระเงิน
           <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="add_payment.php">เพิ่มหลักฐานการชำระเงิน</a></li>
           <li><a href="display_paymentstatus_customer.php">ตรวจสอบสถานะการชำระเงิน</a></li>
         </ul>
       </li>
