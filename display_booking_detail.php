@@ -31,7 +31,7 @@
     <?php include("menu.php"); ?>
     <div class="container">
 
-        
+
         <?php 
         require_once 'connect.php';
         $bookingid = $_GET["StrOrderID"];
@@ -50,70 +50,62 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>ชื่อสินค้า</th>
-                            <th>รูปภาพ</th>
-                            <th>จำนวนที่สั่ง</th>
+                            <td width="101">รหัสสินค้า</td>
+                            <td width="82">ชื่อสินค้า</td>
+                            <td width="82">ราคา</td>
+                            <td width="79">จำนวนที่สั่ง</td>
+                            <td width="79">ราคารวม</td>
                         </tr>
                     </thead>
-                    <tbody>
-                        <?php while($row=$result->fetch_assoc()){?>
-                        <tr>
-                            <td>
-                                <?php echo $row['p_name'];?>
-                            </td>
-                            <td>
-                            <img src="<?php echo $row['p_pic']?>" class="img-thumbnail" alt="Produc picture" data-toggle="modal"
-                  data-target="#display_p_pic" style="width:50px;height:50px;" onclick="receipt_click('<?php echo $row['p_pic'];?>')">
-                            </td>
-                            <td>
-                                <?php echo $row['qty'];?>
-                            </td>
-                        </tr>
-                        <?php } ?>
-                    </tbody>
+                    <?php
+
+$Total = 0;
+$SumTotal = 0;
+
+$strSQL2 = "SELECT * FROM order_detail WHERE OrderID = '".$_GET["StrOrderID"]."' ";
+$objQuery2 = mysqli_query($conn,$strSQL2);
+
+while($objResult2 = mysqli_fetch_array($objQuery2,MYSQLI_ASSOC))
+{
+		$strSQL3 = "SELECT * FROM product WHERE p_id = '".$objResult2["p_id"]."' ";
+		$objQuery3 = mysqli_query($conn,$strSQL3);
+		$objResult3 = $objResult = mysqli_fetch_array($objQuery3,MYSQLI_ASSOC);
+		$Total = $objResult2["qty"] * $objResult3["p_price"];
+		$SumTotal = $SumTotal + $Total;
+	  ?>
+                    <tr>
+                        <td>
+                            <?=$objResult2["p_id"];?>
+                        </td>
+                        <td>
+                            <?=$objResult3["p_name"];?>
+                        </td>
+                        <td>
+                            <?=$objResult3["p_price"];?>
+                        </td>
+                        <td>
+                            <?=$objResult2["qty"];?>
+                        </td>
+                        <td>
+                            <?=number_format($Total,2);?>
+                        </td>
+                    </tr>
+                    <?php
+ }
+  ?>
                 </table>
+                <div align="right">
+                    ยอดทั้งหมด
+                    <?php echo number_format($SumTotal,2);?> บาท <br>
+                    <a href="add_payment.php?StrOrderID=<?php echo $bookingid;?>" class="btn btn-info">อัพโหลดหลักฐานการชำรเงิน</a>
+                    <br>
+                </div>
+                <br>
             </div>
         </div>
     </div>
 
-    <div id="m_edit" class="modal fade" role="dialog">
-        <div class="modal-dialog">
 
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">ข้อมูลการจอง</h4>
-                </div>
-                <div class="modal-body" id="display_update_form_booking">
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <script>
-        $(document).ready(function () {
-            $('.table').DataTable({
-                ordering: false,
-                "language": {
-                    "lengthMenu": "แสดง _MENU_ เรคคอร์ดต่อหนึ่งหน้า",
-                    "zeroRecords": "ไม่พบการค้นหา",
-                    "info": "หน้าที่ _PAGE_ จาก _PAGES_",
-                    "infoEmpty": "ไม่พบข้อมูล",
-                    "infoFiltered": "(กรองจาก _MAX_  เรคคอร์ด)",
-                    "paginate": {
-                        "first": "หน้าแรก",
-                        "last": "หน้าสุดท้าย",
-                        "next": "ถัดไป",
-                        "previous": "ก่อนหน้า"
-                    },
-                    "search": "ค้นหา:"
-                }
-            });
-        });
-    </script>
 
 </body>
 

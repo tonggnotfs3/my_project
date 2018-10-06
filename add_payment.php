@@ -38,7 +38,9 @@
 </script>
 
 <body>
-    <?php include("menu.php"); ?>
+    <?php include("menu.php"); 
+    $bookingid = $_GET["StrOrderID"];
+    ?>
     <div class="container">
 
     <div class="col-md-12">
@@ -53,10 +55,8 @@
                     <form class="form-horizontal" id="form_insert_payment">
                         <div class="form-group">
                             <input type="hidden" class="form-control" name="pay_c_id" id="pay_c_id" value=<?php echo $_SESSION['person_id'];?>>
-                            <label class="control-label col-sm-2" for="pay_book_id">รหัสการสั่งซื้อ</label>
-                            <div class="col-sm-4">
-                                <input type="text" class="form-control" name="pay_book_id" id="pay_book_id">
-                            </div>
+                            <input type="hidden" class="form-control" name="pay_book_id" id="pay_book_id" value=<?php echo $bookingid;?>>
+
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="p_detail">ประเภทการชำระเงิน:</label>
