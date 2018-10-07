@@ -85,7 +85,7 @@
                 <button type="button" data-toggle="modal" data-target="#m_edit" class="btn btn-success" onclick="update_material_click(<?php echo $row['m_id'];?>)">แก้ไข</button>
               </td>
               <th>
-                <a href="..sql/delete_news.php?m_id=<?php echo $row['news_id'];?>" class="btn btn-danger" onclick="return confirm('คุณต้องการลบข้อมูลใช่หรือไม่?')">ลบ</a>
+                <a href="../sql/delete_news.php?news_id=<?php echo $row['news_id'];?>" class="btn btn-danger" onclick="return confirm('คุณต้องการลบข้อมูลใช่หรือไม่?')">ลบ</a>
               </th>
             </tr>
             <?php } ?>

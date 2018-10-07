@@ -111,7 +111,7 @@
                 <button type="button" data-toggle="modal" data-target="#edit_p" class="btn btn-success" onclick="update_product_click(<?php echo $row['p_id'];?>)">แก้ไข</button>
               </td>
               <th>
-                <a href="sql/delete_product.php?p_id=<?php echo $row['p_id'];?>" class="btn btn-danger" onclick="return confirm('คุณต้องการลบข้อมูลใช่หรือไม่?')">ลบ</a>
+                <a href="../sql/delete_product.php?p_id=<?php echo $row['p_id'];?>" class="btn btn-danger" onclick="return confirm('คุณต้องการลบข้อมูลใช่หรือไม่?')">ลบ</a>
               </th>
             </tr>
             <?php } ?>

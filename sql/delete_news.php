@@ -11,4 +11,4 @@ $news_id = $_GET['news_id'];
 
 ?>
 <meta http-equiv="refresh" content = "0;
-  url = ../display_news.php">
+  url = ../admin/display_news.php">
