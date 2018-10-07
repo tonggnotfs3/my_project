@@ -48,22 +48,21 @@
       </div>
     </div>
 
-    <div class="item">
-      <center><img src="pic/pic2.jpg"  style="width:40%;" align="middle"></center>
-      <div class="carousel-caption">
-        <h3>ทดสอบข่าว2</h3>
-        <p>ทดสอบข่าว2</p>
-      </div>
-    </div>
-
-    <div class="item">
-    <center><img src="pic/pic3.jpg"  style="width:40%;" align="middle"></center>
-      <div class="carousel-caption">
-        <h3>ทดาสอบข่าว3</h3>
-        <p>ทดสอบข่าว2</p>
-      </div>
-    </div>
-  </div>
+  <?php include_once("connect.php");
+	$sql = "SELECT * FROM news WHERE news_delstatus = 1";
+	$result = mysqli_query($conn, $sql);
+	$num_row = mysqli_num_rows($result);
+	
+	while($row=$result->fetch_assoc()){
+    echo"<div class=\"item\">
+          <center><img src=\"".$row['news_pic']."\"style=\"width:40%;\" align=\"middle\"></center>
+            <div class=\"carousel-caption\">
+              <h3>".$row['news_topic']."</h3>
+              <p>".$row['news_detail']."</p>
+            </div>
+          </div>
+    " ;
+			} ?>
 
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" data-slide="prev">
