@@ -46,7 +46,7 @@
 
     <?php 
         require_once 'connect.php';
-        $sql="SELECT * FROM `payment`,pay_status,pay_type,customer WHERE payment.pay_type = pay_type.pay_type_id AND pay_status.pay_status_id = payment.pay_status AND customer.c_id = payment.pay_booking_id AND payment.pay_delete = 1";
+        $sql="SELECT * FROM `payment`,pay_status,pay_type,customer WHERE payment.pay_status = pay_status.pay_status_id AND payment.pay_type = pay_type.pay_type_id AND payment.pay_cus_id = customer.c_id AND payment.pay_delete = 1";
         $result=$conn->query($sql);
       ?>
 
@@ -73,7 +73,7 @@
             <?php while($row=$result->fetch_assoc()){?>
             <tr>
               <td>
-                <?php echo $row[''];?>
+                <?php echo $row['pay_booking_id'];?>
               </td>
               <td>
                 <?php echo $row['fristname'];?>
@@ -89,14 +89,15 @@
                   data-target="#display_p_pic" style="width:50px;height:50px;" onclick="receipt_click('<?php echo $row['pay_pic'];?>')">
               </td>
               <td>
+              <form action="../sql/update_status_payment.php" method="post">
                 <input type="hidden" class="form-control" name="pay_id" id="pay_id" value=<?php echo $row['pay_id'];?>>
                 <select class="form-control" id="pay_status" name="pay_status">
                   <option value="">เลือกประเภทการชำรเงิน</option>
-                  <option value="1" <?php if($row['pay_status_id']==1 ) echo "selected" ?>>การชำระเงินผิดพลาด</option>
+                  <option value="1" <?php if($row['pay_status_id']==1 )echo "selected" ?>>การชำระเงินผิดพลาด</option>
                   <option value="2" <?php if($row['pay_status_id']==2 )echo "selected" ?>>ยังไม่ได้รับการตรวจสอบ</option>
                   <option value="3" <?php if($row['pay_status_id']==3 )echo "selected" ?>>ตรวจสอบแล้ว</option>
                 </select>
-                <button type="submit" class="btn btn-default">เพิ่มข้อมูล</button>
+                <input class="btn btn-info" type="submit" value="สั่ง"></td>
                 </form>
               </td>
             </tr>
@@ -129,6 +130,8 @@
       });
     });
   </script>
+
+
 
   <div id="display_p_pic" class="modal fade" role="dialog">
     <div class="modal-dialog">
