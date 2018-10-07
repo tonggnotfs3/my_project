@@ -8,14 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="asset\css\bootstrap.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <script src="asset/js/jquery-3.2.1.min.js"></script>
-    <script src="asset/js/Chart.min.js"></script>
-    <script src="asset/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
-    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="../asset\css\bootstrap.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="../asset/js/jquery-3.2.1.min.js"></script>
+  <script src="../asset/js/Chart.min.js"></script>
+  <script src="../asset/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css" />
+  <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,16 +28,16 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	$.ajax({
-		url: "sql/select_product_chart.php",
+		url: "../sql/select_product_chart.php",
 		method: "GET",
 		success: function(data) {
 			console.log(data);
 			var p_name = [];
-			var p_orderamount = [];
+			var sumQTY = [];
             var color = Chart.helpers.color;
 			for(var i in data) {
 				p_name.push(data[i].p_name);
-				p_orderamount.push(data[i].p_orderamount);
+				sumQTY.push(data[i].sumQTY);
 			}
 
 			var chartdata = {
@@ -49,7 +49,7 @@ $(document).ready(function(){
 						borderColor: 'rgba(179, 230, 255, 1)',
 						hoverBackgroundColor: 'rgba(179, 230, 255, 1)',
 						hoverBorderColor: 'rgba(200, 200, 200, 1)',
-						data: p_orderamount
+						data: sumQTY
 					}
 				]
 			};

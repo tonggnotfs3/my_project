@@ -5,7 +5,7 @@ header('Content-Type: application/json');
 include("connect.php");
 
 //query to get data from the table
-$sql="SELECT p_name, p_orderamount FROM product ORDER BY p_id";
+$sql="SELECT SUM(order_detail.qty) AS sumQTY,product.p_name FROM order_detail,product WHERE order_detail.p_id = product.p_id GROUP BY order_detail.p_id";
 $result=$conn->query($sql);
 
 //execute query
