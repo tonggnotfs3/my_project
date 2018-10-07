@@ -79,6 +79,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccdaff', end
         </ul>
       </li>
     </ul>
+
+    <ul class="nav navbar-nav navbar-left">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">จัดการข่าว
+          <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="add_news.php">เพิ่มข่าว</a></li>
+        </ul>
+      </li>
+    </ul>
+
     <ul class="nav navbar-nav navbar-right">
       <?php
 if(isset($_SESSION['person_id']) ){
