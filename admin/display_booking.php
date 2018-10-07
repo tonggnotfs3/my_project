@@ -56,6 +56,7 @@
                             <th>บริษัท</th>
                             <th>เบอร์</th>
                             <th>ยอดรวมทั้งสิ้น</th>
+                            <th>ใบเสร็จ</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -78,6 +79,9 @@
                             </td>
                             <td>
                                 <a href="display_booking_detail.php?StrOrderID=<?php echo $row['OrderID'];?>" class="btn btn-info">ลายละเอียด</a>
+                            </td>
+                            <td>
+                                <a href="bill.php?StrOrderID=<?php echo $row['OrderID'];?>" class="btn btn-info">พิมพ์</a>
                             </td>
                         </tr>
                         <?php } ?>
