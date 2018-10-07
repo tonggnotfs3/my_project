@@ -46,30 +46,25 @@
                 <div class="panel-heading">
                     <div class="panel-title">
                         <h4>
-                            <span aria-hidden="true"></span>upload หลักฐานการชำระเงิน</h4>
+                            <span aria-hidden="true"></span>เพิ่มข้อมูลข่าว</h4>
                     </div>
                 </div>
                 <div class="panel-body">
-                    <form class="form-horizontal" id="form_insert_payment">
+                    <form class="form-horizontal" id="form_insert_news">
                         <div class="form-group">
-                            <input type="hidden" class="form-control" name="pay_c_id" id="pay_c_id" value=<?php echo $_SESSION['person_id'];?>>
-                            <label class="control-label col-sm-2" for="pay_book_id">รหัสการสั่งซื้อ</label>
+                            <label class="control-label col-sm-2" for="news_topic">หัวข้อข่าว</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" name="pay_book_id" id="pay_book_id">
+                                <input type="text" class="form-control" name="news_topic" id="news_topic">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="p_detail">ประเภทการชำระเงิน:</label>
+                            <label class="control-label col-sm-2" for="news_detail">ลายละเอียด</label>
                             <div class="col-sm-4">
-                                <select class="form-control" id="pay_type" name="pay_type">
-                                    <option value="">เลือกประเภทการชำรเงิน</option>
-                                    <option value="1">ชำระเงินค่ามันจำ</option>
-                                    <option value="2">ชำระเงินทั้งหมด</option>
-                                </select>
+                                <input type="text" class="form-control" name="news_detail" id="news_detail">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="images">หลักฐานการชำระเงิน:</label>
+                            <label class="control-label col-sm-2" for="images">รูปภาพประกอบ:</label>
                             <div class="col-sm-4">
                                 <input class="form-control" id="images" name="images" onchange="showPreview(this)" type="file">
                             </div>
@@ -96,11 +91,11 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#form_insert_payment').submit(function () {
-                var fData = new FormData(document.getElementById("form_insert_payment"));
+            $('#form_insert_news').submit(function () {
+                var fData = new FormData(document.getElementById("form_insert_news"));
                 $.ajax({
                     'type': "POST",
-                    'url': "../sql/insert_payment.php",
+                    'url': "../sql/insert_news.php",
                     'data': fData,
                     'contentType': false,
                     'processData': false,
