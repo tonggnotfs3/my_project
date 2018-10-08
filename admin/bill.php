@@ -82,7 +82,7 @@ if (!$objCon) {
         </tr>
         <tr>
             <td height="126">
-                <table width="769" height="112" border="1">
+                <table width="790" height="112" border="1">
                     <tr>
                         <td width="384">
                             ชื่อบรัษัท
