@@ -61,11 +61,11 @@ if (!$objCon) {
 
         <table class="table table-striped">
           <tr>
-            <td width="101">ProductID</td>
-            <td width="82">ProductName</td>
-            <td width="82">Price</td>
-            <td width="79">Qty</td>
-            <td width="79">Total</td>
+            <td width="101">รหัสสินค้า</td>
+            <td width="82">ชื่อสินค้า</td>
+            <td width="82">ราคาต่อชิ้น</td>
+            <td width="79">จำนวน</td>
+            <td width="79">ราคา</td>
           </tr>
           <?php
   $Total = 0;

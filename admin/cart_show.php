@@ -58,15 +58,15 @@ if (!$objCon) {
               <span aria-hidden="true"></span> ข้อมูสินค้า</h4>
           </div>
         </div>
-        <form action="update.php" method="post">
+        <form action="cart_update.php" method="post">
 <table class="table table-striped">
   <tr>
-    <td width="101">ProductID</td>
-    <td width="82">ProductName</td>
-    <td width="82">Price</td>
-    <td width="79">Qty</td>
-    <td width="79">Total</td>
-    <td width="10">Del</td>
+    <td width="101">รหัสสินค้า</td>
+    <td width="82">ชื่อสินค้า</td>
+    <td width="82">ราคาต่อชิ้น</td>
+    <td width="79">จำนวน</td>
+    <td width="79">ราคา</td>
+    <td width="10">ลบ</td>
   </tr>
   <?php
   $Total = 0;

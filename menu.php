@@ -69,7 +69,7 @@ if(isset($_SESSION['person_id']) ){
     (function () {
         var options = {
             facebook: "1105378012810089", // Facebook page ID
-            call: "0870792322", // Call phone number
+            call: "095-740-6555", // Call phone number
             call_to_action: "ติดต่อเรา", // Call to action
             button_color: "#129BF4", // Color of button
             position: "right", // Position may be 'right' or 'left'

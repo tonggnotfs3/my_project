@@ -10,7 +10,7 @@ session_start();
 	  }
   }
 	
-	header("location:show.php");
+	header("location:cart_show.php");
 
 ?>
 

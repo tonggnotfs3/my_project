@@ -8,7 +8,7 @@
 		$_SESSION["strProductID"][$Line] = "";
 		$_SESSION["strQty"][$Line] = "";
 	}
-	header("location:show.php");
+	header("location:cart_show.php");
 ?>
 
 <?php /* This code download from www.ThaiCreate.Com */ ?>
