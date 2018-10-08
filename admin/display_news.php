@@ -56,7 +56,7 @@
         <div class="panel-heading">
           <div class="panel-title">
             <h4>
-              <span class="glyphicon glyphicon-registration-mark" aria-hidden="true"></span>ข้อมูลวัตถุดิบ</h4>
+              <span class="glyphicon glyphicon-registration-mark" aria-hidden="true"></span>ข้อมูลข่าว</h4>
           </div>
         </div>
         <table class="table table-hover">
@@ -102,7 +102,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">แก้ไข้ข้อมูลวัตถุดิบ</h4>
+          <h4 class="modal-title">แก้ไข้ข้อมูลข่าว</h4>
         </div>
         <div class="modal-body" id="display_update_form_material">
 

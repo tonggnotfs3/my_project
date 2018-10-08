@@ -85,6 +85,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccdaff', end
           <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="add_news.php">เพิ่มข่าว</a></li>
+          <li><a href="display_news.php">ดู/แก้ไข้ข้อมูลข่าว</a></li>
         </ul>
       </li>
     </ul>

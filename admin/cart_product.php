@@ -36,7 +36,7 @@
           <div class="panel-heading">
             <div class="panel-title">
               <h4>
-                <span aria-hidden="true"></span> ข้อมูสินค้า</h4>
+                <span aria-hidden="true"></span>สั่งซื้อสินค้า</h4>
               </div>
             </div>
           </div>
