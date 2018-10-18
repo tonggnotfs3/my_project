@@ -46,7 +46,7 @@
 
     <?php 
         require_once 'connect.php';
-        $sql="SELECT * FROM `payment`,pay_status,pay_type,customer WHERE payment.pay_status = pay_status.pay_status_id AND payment.pay_type = pay_type.pay_type_id AND payment.pay_cus_id = customer.c_id AND payment.pay_delete = 1";
+        $sql="SELECT * FROM `payment`,pay_status,pay_type,customer WHERE payment.pay_status = pay_status.pay_status_id AND payment.pay_type = pay_type.pay_type_id AND payment.pay_cus_id = customer.c_id AND payment.pay_delete = 1 ORDER BY `payment`.`pay_id` DESC";
         $result=$conn->query($sql);
       ?>
 
