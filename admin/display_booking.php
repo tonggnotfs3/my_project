@@ -35,7 +35,7 @@
         <?php
         $customerID = $_SESSION['person_id']; 
         require_once 'connect.php';
-        $sql="SELECT * FROM orders,customer WHERE orders.customer_id = customer.c_id ORDER BY `orders`.`OrderID` DESC";
+        $sql="SELECT * FROM orders INNER JOIN customer ON orders.customer_id = customer.c_id INNER JOIN payment ON orders.OrderID = payment.pay_booking_id ORDER BY `orders`.`OrderID` DESC";
         $result=$conn->query($sql);
       ?>
 
