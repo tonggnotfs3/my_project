@@ -28,7 +28,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	$.ajax({
-		url: "../sql/select_product_chart_top.php",
+		url: "../sql/select_product_chart_low.php",
 		method: "GET",
 		success: function(data) {
 			console.log(data);
