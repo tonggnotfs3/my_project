@@ -72,7 +72,7 @@ if(isset($_SESSION['person_id']) ){
             call: "095-740-6555", // Call phone number
             call_to_action: "ติดต่อเรา", // Call to action
             button_color: "#129BF4", // Color of button
-            position: "right", // Position may be 'right' or 'left'
+            position: "left", // Position may be 'right' or 'left'
             order: "facebook,call", // Order of buttons
         };
         var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
