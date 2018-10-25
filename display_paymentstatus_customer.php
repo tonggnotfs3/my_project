@@ -46,7 +46,7 @@
     <?php 
         $customerID = $_SESSION['person_id'];
         require_once 'connect.php';
-        $sql="SELECT payment.pay_id,payment.pay_booking_id,payment.pay_pic,pay_type.pay_type_name,payment.pay_status,pay_status.pay_status_name FROM payment,customer,pay_status,pay_type WHERE payment.pay_cus_id = customer.c_id AND payment.pay_delete = 1 AND payment.pay_status = pay_status.pay_status_id AND payment.pay_type = pay_type.pay_type_id AND payment.pay_cus_id = $customerID";
+        $sql="SELECT payment.pay_id,payment.description,payment.pay_booking_id,payment.pay_pic,pay_type.pay_type_name,payment.pay_status,pay_status.pay_status_name FROM payment,customer,pay_status,pay_type WHERE payment.pay_cus_id = customer.c_id AND payment.pay_delete = 1 AND payment.pay_status = pay_status.pay_status_id AND payment.pay_type = pay_type.pay_type_id AND payment.pay_cus_id = $customerID";
         $result=$conn->query($sql);
       ?>
 
@@ -65,6 +65,7 @@
               <th>ประเภทการชำระเงิน</th>
               <th>หลักฐาน</th>
               <th>สถานะ</th>
+              <th>หมายเหตุ</th>
             </tr>
           </thead>
           <tbody>
@@ -82,6 +83,9 @@
               </td>
               <td>
                 <?php echo $row['pay_status_name'];?>
+              </td>
+              <td>
+                <?php echo $row['description'];?>
               </td>
             </tr>
             <?php } ?>
