@@ -60,25 +60,25 @@ if (!$objCon) {
 
         <table class="table table-striped">
           <tr>
-            <td width="71">OrderID</td>
+            <td width="71">รหัสสั่งสื้อ</td>
             <td width="217">
               <?=$objResult["OrderID"];?>
             </td>
           </tr>
           <tr>
-            <td width="71">Name</td>
+            <td width="71">ชื่อลูกค้า</td>
             <td width="217">
               <?=$objResult["fristname"].$objResult["lastname"];?>
             </td>
           </tr>
           <tr>
-            <td>Address</td>
+            <td>ที่อยู่</td>
             <td>
               <?=$objResult["address"].$objResult["DISTRICT_NAME"].$objResult["AMPHUR_NAME"].$objResult["PROVINCE_NAME"];?>
             </td>
           </tr>
           <tr>
-            <td>Tel</td>
+            <td>เบอร์โทรศัพท์</td>
             <td>
               <?=$objResult["tel"];?>
             </td>
@@ -92,11 +92,11 @@ if (!$objCon) {
         <table class="table table-striped">
         <thead>
           <tr>
-            <td width="101">ProductID</td>
-            <td width="82">ProductName</td>
-            <td width="82">Price</td>
-            <td width="79">Qty</td>
-            <td width="79">Total</td>
+            <td width="101">รหัสสินค้า</td>
+            <td width="82">ชื่อสินค้า</td>
+            <td width="82">ราคาต่อชิ้น</td>
+            <td width="79">จำนวน</td>
+            <td width="79">ราคารวม</td>
           </tr>
           </thead>
           <?php
@@ -136,8 +136,10 @@ while($objResult2 = mysqli_fetch_array($objQuery2,MYSQLI_ASSOC))
  }
   ?>
         </table>
-        Sum Total
+        <div align="right ">        
+        ราคารวมทั้งหมด
         <?php echo number_format($SumTotal,2);?>
+        บาท</div>
 
         <?php
 mysqli_close($objCon);
