@@ -97,7 +97,8 @@
                   <option value="2" <?php if($row['pay_status_id']==2 )echo "selected" ?>>ยังไม่ได้รับการตรวจสอบ</option>
                   <option value="3" <?php if($row['pay_status_id']==3 )echo "selected" ?>>ตรวจสอบแล้ว</option>
                 </select>
-                <input class="btn btn-info" type="submit" value="สั่ง"></td>
+                <input type="text" class="form-control" name="description" id="description" value=<?php echo $row['description'];?>>
+                <input class="btn btn-info" type="submit" value="บันทึก"></td>
                 </form>
               </td>
             </tr>
