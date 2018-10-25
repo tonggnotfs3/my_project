@@ -106,8 +106,9 @@ if (!$objCon) {
         <br>
 
         <div align="right" style="font-size:16px;">
-          Sum Total
+          ราคารวม
           <?php echo number_format($SumTotal,2);?>
+          บาท
         </div>
         <br>
         <div align="right">
