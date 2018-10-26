@@ -64,7 +64,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccdaff', end
           <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="cart_product.php">เพิ่มข้อจองสินค้า</a></li>
-          <li><a href="display_booking.php">ดู/แก้ไข้ข้อมูลจองสินค้า</a></li>
+          <li><a href="display_booking_payed.php">รายการที่ชำระเงินแล้ว</a></li>
         </ul>
       </li>
     </ul>
