@@ -38,7 +38,19 @@ if (!$objCon) {
 				VALUES
 				('".$strOrderID."','".$_SESSION["strProductID"][$i]."','".$_SESSION["strQty"][$i]."') 
 			  ";
-			  mysqli_query($objCon,$strSQL);
+				mysqli_query($objCon,$strSQL);
+				
+				$sql1="SELECT product.p_material,product.p_material_use FROM product WHERE product.p_id = '".$_SESSION["strProductID"][$i]."'";
+                $result1=$objCon->query($sql1);
+                while($row1=$result1->fetch_assoc()){
+                    $p_m_id = $row1['p_material'];
+                    $meterialuse = $row1['p_material_use'];
+								}
+
+								$sum_meterial_use = $meterialuse * $_SESSION["strQty"][$i];
+
+								$sql2 = "UPDATE `material` SET `m_amount` = `m_amount`-'$sum_meterial_use' WHERE `material`.`m_id` = '$p_m_id'";
+								mysqli_query($objCon,$sql2);
 	  }
   }
 
