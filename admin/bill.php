@@ -165,11 +165,11 @@ while($objResult2 = mysqli_fetch_array($objQuery2,MYSQLI_ASSOC))
     <table width="790" border="1">
         <tr>
             <td width="260" align="center">
-                <?php echo "(".bahtText(0).")"; ?>
+                <?php echo "(".bahtText($SumTotal).")"; ?>
             </td>
             <td width="260" align="right">จำนวนเงินทั้งสิ้น</td>
             <td width="260" align="right">
-                <?php echo number_format($SumTotal,2);?>
+                <?php echo number_format($SumTotal,2);?> บาท
             </td>
         </tr>
     </table>
