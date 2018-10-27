@@ -85,7 +85,7 @@ if (!$objCon) {
           </tr>
         </table>
         <br>
-
+        <hr>
         รายการสินค้า
         <br>
 
