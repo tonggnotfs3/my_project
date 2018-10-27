@@ -37,6 +37,18 @@
       }
     });
   }
+
+    function update_material_amout_click(m_id) {
+    var info = 'm_id=' + m_id;
+    $.ajax({
+      type: "POST",
+      url: "../include/update_form_material_amout.php",
+      data: info,
+      success: function (data) {
+        $("#display_update_form_materi_amout").html(data);
+      }
+    });
+  }
 </script>
 
 <body>
@@ -66,7 +78,8 @@
               <th>ชื่อวัตถุดิบ</th>
               <th>จำนวน</th>
               <th>แก้ไข</th>
-              <th>ข้อมูล</th>
+              <th>เพิ่มปริมาณวัตถุดิบ</th>
+              <th>ลบ</th>
             </tr>
           </thead>
           <tbody>
@@ -84,6 +97,9 @@
               </td>
               <td>
                 <button type="button" data-toggle="modal" data-target="#m_edit" class="btn btn-success" onclick="update_material_click(<?php echo $row['m_id'];?>)">แก้ไข</button>
+              </td>
+              <td>
+                <button type="button" data-toggle="modal" data-target="#m_edit_amout" class="btn btn-success" onclick="update_material_amout_click(<?php echo $row['m_id'];?>)">เพิ่ม</button>
               </td>
               <th>
                 <a href="../sql/delete_material.php?m_id=<?php echo $row['m_id'];?>" class="btn btn-danger" onclick="return confirm('คุณต้องการลบข้อมูลใช่หรือไม่?')">ลบ</a>
@@ -106,6 +122,23 @@
           <h4 class="modal-title">แก้ไข้ข้อมูลวัตถุดิบ</h4>
         </div>
         <div class="modal-body" id="display_update_form_material">
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+    <div id="m_edit_amout" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">แก้ไข้ข้อมูลวัตถุดิบ</h4>
+        </div>
+        <div class="modal-body" id="display_update_form_materi_amout">
 
         </div>
       </div>
