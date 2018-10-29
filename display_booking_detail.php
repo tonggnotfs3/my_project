@@ -140,7 +140,10 @@ while($objResult2 = mysqli_fetch_array($objQuery2,MYSQLI_ASSOC))
         ราคารวมทั้งหมด
         <?php echo number_format($SumTotal,2);?>
         บาท</div>
-
+        <div align="right">
+                    <a href="add_payment.php?StrOrderID=<?php echo $_GET["StrOrderID"];?>" class="btn btn-info">อัพโหลดหลักฐานการชำรเงิน</a>
+                    <br>
+                </div>
         <?php
 mysqli_close($objCon);
 ?>
