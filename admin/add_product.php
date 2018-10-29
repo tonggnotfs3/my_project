@@ -83,6 +83,12 @@
               </div>
             </div>
             <div class="form-group">
+              <label class="control-label col-sm-2" for="p_material_use">จำนวนวัตถุดิบที่ใช้:</label>
+              <div class="col-sm-4">
+                <input class="form-control" id="p_material_use" name="p_material_use">
+              </div>
+            </div>
+            <div class="form-group">
               <label class="control-label col-sm-2" for="p_price">ราคา:</label>
               <div class="col-sm-4">
                 <input type="text" class="form-control" name="p_price" id="p_price">

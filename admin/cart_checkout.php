@@ -63,9 +63,9 @@ if (!$objCon) {
           <tr>
             <td width="101">รหัสสินค้า</td>
             <td width="82">ชื่อสินค้า</td>
-            <td width="82">ราคาต่อชิ้น</td>
-            <td width="79">จำนวน</td>
-            <td width="79">ราคา</td>
+            <td align="right" width="82">ราคาต่อชิ้น</td>
+            <td align="right" width="79">จำนวน</td>
+            <td align="right" width="79">ราคา</td>
           </tr>
           <?php
   $Total = 0;
@@ -88,13 +88,13 @@ if (!$objCon) {
             <td>
               <?=$objResult["p_name"];?>
             </td>
-            <td>
+            <td align="right">
               <?=$objResult["p_price"];?>
             </td>
-            <td>
+            <td align="right">
               <?=$_SESSION["strQty"][$i];?>
             </td>
-            <td>
+            <td align="right">
               <?=number_format($Total,2);?>
             </td>
           </tr>

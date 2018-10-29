@@ -30,8 +30,8 @@
                                         $p_material = $_POST['p_material'];
                                         $p_amount = $_POST['p_amount'];
                                         $p_price = $_POST['p_price'];
-
-                                        $sql = "INSERT INTO `product` (`p_name`, `p_detail`, `p_material`, `p_pic`, `p_price`, `p_status`) VALUES ('$p_name', '$p_detail', '$p_material', '$fname', '$p_price', '1');";
+                                        $p_material_use = $_POST['p_material_use'];
+                                        $sql = "INSERT INTO `product` (`p_name`, `p_detail`, `p_material`, `p_pic`, `p_price`, `p_status`, `p_material_use`) VALUES ('$p_name', '$p_detail', '$p_material', '$fname', '$p_price', '1', '$p_material_use');";
                                         $data = mysqli_query($conn,$sql);
 
                     

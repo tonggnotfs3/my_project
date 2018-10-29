@@ -71,7 +71,7 @@
               <th>รหัสสินค้า</th>
               <th>ชื่อสินค้า</th>
               <th>รูป</th>
-              <th>จำนวนที่ขายได้</th>
+              <th align="right">จำนวนที่ขายได้</th>
             </tr>
           </thead>
           <tbody>
@@ -87,7 +87,7 @@
               <img src="<?php echo "../".$row['p_pic']?>" class="img-thumbnail" alt="Produc picture" data-toggle="modal"
                   data-target="#display_p_pic" style="width:50px;height:50px;" onclick="receipt_click('<?php echo $row['p_pic'];?>')">
               </td>
-              <td>
+              <td align="right">
                 <?php echo $row['sumqty'];?>
               </td>
             </tr>

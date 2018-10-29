@@ -76,8 +76,7 @@
               <th>ชื่อสินค้า</th>
               <th>รายละเอียดสินค้า</th>
               <th>รูปสินค้า</th>
-              <th>วัสดุที่ใช้</th>
-              <th>ราคา</th>
+              <th align="right">ราคา</th>
             </tr>
           </thead>
           <tbody>
@@ -96,10 +95,7 @@
                 <img src="<?php echo $row['p_pic']?>" class="img-thumbnail" alt="Produc picture" data-toggle="modal"
                   data-target="#display_p_pic" style="width:50px;height:50px;" onclick="receipt_click('<?php echo $row['p_pic'];?>')">
               </td>
-              <td>
-                <?php echo $row['p_material'];?>
-              </td>
-              <td>
+              <td align="right">
                 <?php echo $row['p_price'];?>
               </td>
             </tr>

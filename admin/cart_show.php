@@ -63,9 +63,9 @@ if (!$objCon) {
   <tr>
     <td width="101">รหัสสินค้า</td>
     <td width="82">ชื่อสินค้า</td>
-    <td width="82">ราคาต่อชิ้น</td>
+    <td align="right" width="82">ราคาต่อชิ้น</td>
     <td width="79">จำนวน</td>
-    <td width="79">ราคา</td>
+    <td align="right" width="79">ราคา(บาท)</td>
     <td width="10">ลบ</td>
   </tr>
   <?php
@@ -85,9 +85,9 @@ if (!$objCon) {
 	  <tr>
 		<td><?=$_SESSION["strProductID"][$i];?></td>
 		<td><?=$objResult["p_name"];?></td>
-		<td><?=$objResult["p_price"];?></td>
+		<td align="right"><?=$objResult["p_price"];?></td>
 		<td><input type="text" name="txtQty<?php echo $i;?>" value="<?php echo $_SESSION["strQty"][$i];?>" size="2"></td>
-		<td><?=number_format($Total,2);?></td>
+		<td align="right"><?=number_format($Total,2);?></td>
 		<td><a href="cart_delete.php?Line=<?=$i;?>">x</a></td>
 	  </tr>
 	  <?php
@@ -99,7 +99,7 @@ if (!$objCon) {
 
 
   <div class="col-md-6"><input class="btn btn-primary" type="submit" value="อัปเดต">
-  ยอดรวมทั้งสิ้น <?php echo number_format($SumTotal,2);?></div>
+  ยอดรวมทั้งสิ้น <?php echo number_format($SumTotal,2);?> บาท</div>
 
 
 </form>

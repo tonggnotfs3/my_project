@@ -100,7 +100,7 @@
               <td>
                 <?php echo $row['m_name'];?>
               </td>
-              <td>
+              <td align="right">
                 <?php echo $row['p_price'];?>
               </td>
               <td>

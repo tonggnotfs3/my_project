@@ -68,7 +68,7 @@ if (!$objCon) {
           <tr>
             <td width="71">ชื่อลูกค้า</td>
             <td width="217">
-              <?=$objResult["fristname"].$objResult["lastname"];?>
+              <?=$objResult["fristname"]?>&nbsp;&nbsp;<?=$objResult["lastname"];?>
             </td>
           </tr>
           <tr>
@@ -94,9 +94,9 @@ if (!$objCon) {
           <tr>
             <td width="101">รหัสสินค้า</td>
             <td width="82">ชื่อสินค้า</td>
-            <td width="82">ราคาต่อชิ้น</td>
-            <td width="79">จำนวน</td>
-            <td width="79">ราคารวม</td>
+            <td align="right" width="82">ราคาต่อชิ้น</td>
+            <td align="right" width="79">จำนวน(ชิ้น)</td>
+            <td align="right" width="79">ราคารวม</td>
           </tr>
           </thead>
           <?php
@@ -122,13 +122,13 @@ while($objResult2 = mysqli_fetch_array($objQuery2,MYSQLI_ASSOC))
             <td>
               <?=$objResult3["p_name"];?>
             </td>
-            <td>
+            <td align="right">
               <?=$objResult3["p_price"];?>
             </td>
-            <td>
+            <td align="right">
               <?=$objResult2["qty"];?>
             </td>
-            <td>
+            <td align="right">
               <?=number_format($Total,2);?>
             </td>
           </tr>
