@@ -27,7 +27,7 @@
 
 <body>
   <?php include("menu.php"); ?>
-  <<?php require_once '../connect.php' ; $sql="SELECT * FROM `product` WHERE `p_status`= 1 ORDER BY `p_id` ASC" ; $result=$conn->query($sql);
+  <?php require_once '../connect.php' ; $sql="SELECT * FROM `product` WHERE `p_status`= 1 ORDER BY `p_id` ASC" ; $result=$conn->query($sql);
     ?>
 
     <div class="container">
@@ -86,7 +86,27 @@
         </div>
       </div>
     </div>
-
+  <script>
+    $(document).ready(function () {
+      $('.table').DataTable({
+        ordering: false,
+        "language": {
+          "lengthMenu": "แสดง _MENU_ เรคคอร์ดต่อหนึ่งหน้า",
+          "zeroRecords": "ไม่พบการค้นหา",
+          "info": "หน้าที่ _PAGE_ จาก _PAGES_",
+          "infoEmpty": "ไม่พบข้อมูล",
+          "infoFiltered": "(กรองจาก _MAX_  เรคคอร์ด)",
+          "paginate": {
+            "first": "หน้าแรก",
+            "last": "หน้าสุดท้าย",
+            "next": "ถัดไป",
+            "previous": "ก่อนหน้า"
+          },
+          "search": "ค้นหา:"
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

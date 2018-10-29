@@ -77,7 +77,6 @@
               <th>รายละเอียดสินค้า</th>
               <th>รูปสินค้า</th>
               <th>วัสดุที่ใช้</th>
-              <th>จำนวนนคงเหลือ</th>
               <th>ราคา</th>
             </tr>
           </thead>
@@ -99,9 +98,6 @@
               </td>
               <td>
                 <?php echo $row['p_material'];?>
-              </td>
-              <td>
-                <?php echo $row['p_amount'];?>
               </td>
               <td>
                 <?php echo $row['p_price'];?>
