@@ -24,12 +24,18 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-
+<?php 
+$datestart = $_POST["datestart"];
+$dateend = $_POST["dateend"];
+?>
 <script type="text/javascript">
 $(document).ready(function(){
+    var datestart = "<?= $datestart; ?>";
+    var dateend = "<?= $dateend; ?>";
 	$.ajax({
 		url: "../sql/select_product_chart_low.php",
 		method: "GET",
+        data: {datestart: datestart, dateend: dateend},
 		success: function(data) {
 			console.log(data);
 			var p_name = [];
@@ -44,7 +50,7 @@ $(document).ready(function(){
 				labels: p_name,
 				datasets : [
 					{
-						label: 'สินค้า',
+						label: 'จำนวน(ชิ้น)',
 						backgroundColor: 'rgb(179, 230, 255, 0.50)',
 						borderColor: 'rgba(179, 230, 255, 1)',
 						hoverBackgroundColor: 'rgba(179, 230, 255, 1)',

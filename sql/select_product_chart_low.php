@@ -3,9 +3,10 @@
 header('Content-Type: application/json');
 
 include("connect.php");
-
+$datestart = $_GET['datestart'];
+$dateend = $_GET['dateend'];
 //query to get data from the table
-$sql="SELECT SUM(order_detail.qty) AS sumQTY,product.p_name FROM order_detail,product WHERE order_detail.p_id = product.p_id GROUP BY order_detail.p_id ORDER BY `sumQTY` ASC LIMIT 10";
+$sql="SELECT SUM(order_detail.qty) AS sumQTY,product.p_name FROM order_detail,product,orders WHERE order_detail.p_id = product.p_id AND orders.OrderID = order_detail.OrderID AND orders.OrderDate BETWEEN '$datestart' AND '$dateend' GROUP BY order_detail.p_id ORDER BY `sumQTY` ASC LIMIT 10";
 $result=$conn->query($sql);
 
 //execute query
