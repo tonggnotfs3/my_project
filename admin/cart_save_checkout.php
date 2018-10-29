@@ -18,7 +18,7 @@ if (!$objCon) {
   $strSQL = "
 	INSERT INTO orders (OrderDate,customer_id)
 	VALUES
-	('".date("Y-m-d H:i:s")."','".$_POST["p_id"]."') 
+	('".date("Y-m-d")."','".$_POST["p_id"]."') 
   ";
   $objQuery = mysqli_query($objCon,$strSQL);
   if(!$objQuery)
