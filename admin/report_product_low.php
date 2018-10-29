@@ -83,7 +83,7 @@ $(document).ready(function(){
                 </div>
                 <!-- content here -->
                 <div id="chart-container">
-                    <canvas id="mycanvas"></canvas>
+                    <canvas id="mycanvas" height="25vw" width="80vw"></canvas>
                 </div>
                 <!-- end content -->
             </div>
