@@ -37,7 +37,7 @@
         
       <form class="form-horizontal" action="report_sales.php" method="post">
         <div class="form-group">
-          <label class="control-label col-sm-2" for="m_name">ชื่อวัตถุดิบ:</label>
+          <label class="control-label col-sm-2" for="m_name">เลือกเดือน:</label>
           <div class="col-sm-4">
           <input type="month" id="date" name="date"
            min="2018-01" value="2018-01" />
