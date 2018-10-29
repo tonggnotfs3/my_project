@@ -117,7 +117,7 @@ if (!$objCon) {
               <label for="p_id">รหัสลูกค้า:</label>
               <input type="text" class="form-control" name="p_id" id="p_id">
             </div>
-            <input class="btn btn-info" type="submit" name="Submit" value="Submit">
+            <input class="btn btn-info" type="submit" name="Submit" value="ตกลง">
           </form>
         </div>
 

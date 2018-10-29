@@ -98,18 +98,18 @@ if (!$objCon) {
 
 
 
-  <div class="col-md-6"><input class="btn btn-primary" type="submit" value="Update">
+  <div class="col-md-6"><input class="btn btn-primary" type="submit" value="อัปเดต">
   ยอดรวมทั้งสิ้น <?php echo number_format($SumTotal,2);?></div>
 
 
 </form>
 <div class="col-md-6" align="right">
-<a class="btn btn-success" href="cart_product.php">Go to Product</a>
+<a class="btn btn-success" href="cart_product.php">เลือกสินค้าเพิ่ม</a>
 <?php
 	if($SumTotal > 0)
 	{
 ?>
-	| <a  class="btn btn-info" href="cart_checkout.php">CheckOut</a>
+	| <a  class="btn btn-info" href="cart_checkout.php">สั่ง</a>
 <?php
 	}
 ?>
