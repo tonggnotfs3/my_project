@@ -116,6 +116,9 @@ if (!$objCon) {
             <div class="form-group">
               <label for="p_id">รหัสลูกค้า:</label>
               <input type="text" class="form-control" name="p_id" id="p_id">
+              <label for="p_id">กำหนดส่งสินค้า:</label>
+              <input type="date" class="form-control" id="datesend" name="datesend"
+           min="2018-01" value="2018-01" />
             </div>
             <input class="btn btn-info" type="submit" name="Submit" value="ตกลง">
           </form>

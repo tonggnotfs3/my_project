@@ -16,9 +16,9 @@ if (!$objCon) {
   $SumTotal = 0;
 
   $strSQL = "
-	INSERT INTO orders (OrderDate,customer_id)
+	INSERT INTO orders (OrderDate,customer_id,sendDate)
 	VALUES
-	('".date("Y-m-d")."','".$_POST["p_id"]."') 
+	('".date("Y-m-d")."','".$_POST["p_id"]."','".$_POST["datesend"]."') 
   ";
   $objQuery = mysqli_query($objCon,$strSQL);
   if(!$objQuery)

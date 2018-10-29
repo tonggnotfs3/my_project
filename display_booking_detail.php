@@ -83,6 +83,12 @@ if (!$objCon) {
               <?=$objResult["tel"];?>
             </td>
           </tr>
+          <tr>
+            <td>กำหนดส่งวันที่</td>
+            <td>
+              <?=$objResult["sendDate"];?>
+            </td>
+          </tr>
         </table>
         <br>
         <hr>
