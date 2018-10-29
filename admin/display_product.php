@@ -55,7 +55,7 @@
 
   <?php 
         require_once 'connect.php';
-        $sql="SELECT * FROM `product` WHERE `p_status`= 1 ORDER BY `p_id` ASC";
+        $sql="SELECT * FROM `product` INNER JOIN material on product.p_material = material.m_id WHERE `p_status`= 1 ORDER BY `p_id` ASC";
         $result=$conn->query($sql);
       ?>
 
@@ -98,7 +98,7 @@
                   data-target="#display_p_pic" style="width:50px;height:50px;" onclick="receipt_click('<?php echo $row['p_pic'];?>')">
               </td>
               <td>
-                <?php echo $row['p_material'];?>
+                <?php echo $row['m_name'];?>
               </td>
               <td>
                 <?php echo $row['p_price'];?>

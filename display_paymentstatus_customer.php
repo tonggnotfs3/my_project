@@ -72,7 +72,7 @@
             <?php while($row=$result->fetch_assoc()){?>
             <tr>
               <td>
-                <?php echo $row['pay_booking_id'];?>
+              <a href="display_booking_detail.php?StrOrderID=<?php echo $row['pay_booking_id'];?>"><?php echo $row['pay_booking_id'];?></a>
               </td>
               <td>
                 <?php echo $row['pay_type_name'];?>
