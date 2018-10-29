@@ -157,7 +157,7 @@ div.content{
       $('.table').DataTable({
         ordering: false,
         "language": {
-          "lengthMenu": "แสดง _MENU_ เรคคอร์ดต่อหนึ่งหน้า",
+          "lengthMenu": "แสดง _MENU_ เรคอร์ดต่อหนึ่งหน้า",
           "zeroRecords": "ไม่พบการค้นหา",
           "info": "หน้าที่ _PAGE_ จาก _PAGES_",
           "infoEmpty": "ไม่พบข้อมูล",

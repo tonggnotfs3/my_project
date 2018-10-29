@@ -41,7 +41,7 @@
 <body>
   <?php include("menu.php"); 
   $date = $_POST["date"];
-  echo $date;
+  //echo $date;
   ?>
   <div class="container">
 

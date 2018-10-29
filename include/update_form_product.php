@@ -43,12 +43,6 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="control-label col-sm-2" for="p_amount">จำนวนคงเหลือ:</label>
-              <div class="col-sm-4">
-                <input type="text" class="form-control" name="p_amount" id="p_amount" value=<?php echo $row2['p_amount'];?>>
-              </div>
-            </div>
-            <div class="form-group">
               <label class="control-label col-sm-2" for="images">รูปสินค้า:</label>
               <div class="col-sm-4">
                 <input class="form-control" id="images" name="images" onchange="showPreview(this)" type="file">
