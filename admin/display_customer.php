@@ -73,9 +73,6 @@ div.content{
               <th>ชื่อผู้ติดต่อ</th>
               <th>นามสกุล</th>
               <th>ที่อยู่</th>
-              <th>จังหวัด</th>
-              <th>อำเภอ</th>
-              <th>ต่ำบล</th>
               <th>เบอร์โทร</th>
               <th>แก้ไข</th>
               <th>ลบ</th>
@@ -100,16 +97,7 @@ div.content{
                 <?php echo $row['lastname'];?>
               </td>
               <td>
-                <?php echo $row['address'];?>
-              </td>
-              <td>
-                <?php echo $row['PROVINCE_NAME'];?>
-              </td>
-              <td>
-                <?php echo $row['AMPHUR_NAME'];?>
-              </td>
-              <td>
-                <?php echo $row['DISTRICT_NAME'];?>
+                <?php echo $row['address'];?>&nbsp<?php echo $row['PROVINCE_NAME'];?><?php echo $row['AMPHUR_NAME'];?><?php echo $row['DISTRICT_NAME'];?>
               </td>
               <td>
                 <?php echo $row['tel'];?>
