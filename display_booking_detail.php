@@ -143,7 +143,7 @@ while($objResult2 = mysqli_fetch_array($objQuery2,MYSQLI_ASSOC))
   ?>
         </table>
         <div align="right ">        
-        ราคารวมทั้งหมด
+        รวมเงินทั้งสิ้น
         <?php echo number_format($SumTotal,2);?>
         บาท</div>
         <div align="right">
