@@ -76,7 +76,7 @@
             <tr>
               <th>รหัสวัตถุดิบ</th>
               <th>ชื่อวัตถุดิบ</th>
-              <th>จำนวน</th>
+              <th align="right">จำนวน(เมตร)</th>
               <th>แก้ไข</th>
               <th>เพิ่มปริมาณวัตถุดิบ</th>
               <th>ลบ</th>
@@ -91,9 +91,8 @@
               <td>
                 <?php echo $row['m_name'];?>
               </td>
-              <td>
-                <?php echo $row['m_amount'];?> &nbsp;
-                <?php echo $row['m_unit'];?>
+              <td align="right">
+                <?php echo number_format($row['m_amount']);?>
               </td>
               <td>
                 <button type="button" data-toggle="modal" data-target="#m_edit" class="btn btn-success" onclick="update_material_click(<?php echo $row['m_id'];?>)">แก้ไข</button>
