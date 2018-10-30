@@ -70,7 +70,6 @@ div.content{
               <th>รหัสสมาชิก</th>
               <th>หน่วยงาน</th>
               <th>ชื่อผู้ใช้</th>
-              <th>รหัสผ่าน</th>
               <th>ชื่อผู้ติดต่อ</th>
               <th>นามสกุล</th>
               <th>ที่อยู่</th>
@@ -93,9 +92,6 @@ div.content{
               </td>
               <td>
                 <?php echo $row['username'];?>
-              </td>
-              <td>
-                <?php echo $row['password'];?>
               </td>
               <td>
                 <?php echo $row['fristname'];?>
