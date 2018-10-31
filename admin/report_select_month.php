@@ -48,7 +48,7 @@
         <div class="col-sm-2">
         </div>
          <div class="col-sm-4">
-         <input class="btn btn-info" type="submit" name="Submit" value="Submit">
+         <input class="btn btn-info" type="submit" name="Submit" value="ตกลง">
         </div>
       </form>
 
