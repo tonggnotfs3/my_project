@@ -47,6 +47,21 @@ if (!$objCon) {
   $strSQL = "SELECT * FROM customer,orders,amphur,province,districts WHERE customer.c_id = orders.customer_id AND customer.province = province.PROVINCE_ID AND customer.amphur = amphur.AMPHUR_ID AND customer.districts = districts.DISTRICT_ID AND OrderID = '".$_GET["StrOrderID"]."' ";
   $objQuery = mysqli_query($objCon,$strSQL);
   $objResult = $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
+
+
+
+  function DateThai($strDate)
+	{
+		$strYear = date("Y",strtotime($strDate))+543;
+		$strMonth= date("n",strtotime($strDate));
+		$strDay= date("j",strtotime($strDate));
+		$strHour= date("H",strtotime($strDate));
+		$strMinute= date("i",strtotime($strDate));
+		$strSeconds= date("s",strtotime($strDate));
+		$strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
+		$strMonthThai=$strMonthCut[$strMonth];
+		return "$strDay $strMonthThai $strYear";
+	}
 ?>
   <div class="container">
     <div class="col-md-12">
@@ -86,7 +101,7 @@ if (!$objCon) {
           <tr>
             <td>กำหนดส่งวันที่</td>
             <td>
-              <?=$objResult["sendDate"];?>
+              <?=DateThai($objResult["sendDate"]);?>
             </td>
           </tr>
         </table>
