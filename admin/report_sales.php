@@ -51,6 +51,19 @@
         require_once 'connect.php';
         $sql="SELECT product.p_name,product.p_pic,product.p_id,sum(order_detail.qty) AS sumqty FROM `orders` INNER JOIN order_detail ON orders.OrderID = order_detail.OrderID INNER JOIN product ON product.p_id = order_detail.p_id WHERE orders.OrderDate LIKE '%".$date."%' AND orders.fin_status = 2 GROUP BY order_detail.p_id";
         $result=$conn->query($sql);
+
+        function DateThai($strDate)
+        {
+          $strYear = date("Y",strtotime($strDate))+543;
+          $strMonth= date("n",strtotime($strDate));
+          $strDay= date("j",strtotime($strDate));
+          $strHour= date("H",strtotime($strDate));
+          $strMinute= date("i",strtotime($strDate));
+          $strSeconds= date("s",strtotime($strDate));
+          $strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
+          $strMonthThai=$strMonthCut[$strMonth];
+          return "$strMonthThai $strYear";
+        }
       ?>
 
     <div class="col-md-12">
@@ -63,7 +76,7 @@
         </div>
         <center>
         <h3>รายงานยอดขาย</h3>
-        <h3>ประจำเดือน <?php echo $date; ?></h3>
+        <h3>ประจำเดือน <?php echo DateThai($date); ?></h3>
         </center>
         <table class="table table-hover">
           <thead>
