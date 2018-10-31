@@ -38,14 +38,14 @@
         <div class="form-group">
           <label class="control-label col-sm-2" for="datestarts">วันที่เริ่มต้น:</label>
           <div class="col-sm-4">
-          <input type="date" id="datestart" name="datestart"
+          <input class="form-control" type="date" id="datestart" name="datestart"
            min="2018-01" value="2018-01" />
           </div>
         </div>
         <div class="form-group">
           <label class="control-label col-sm-2" for="dateend">วันที่สิ้นสุด:</label>
           <div class="col-sm-4">
-          <input type="date" id="dateend" name="dateend"
+          <input class="form-control" type="date" id="dateend" name="dateend"
            min="2018-01" value="2018-01" />
           </div>
         </div>
