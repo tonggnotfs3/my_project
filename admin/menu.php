@@ -79,6 +79,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccdaff', end
           <li><a href="report_select_day_low.php">รายงานสินค้าขายไม่ดี</a></li>
           <li><a href="report_select_month.php">ยอดขายประจำเดือน</a></li>
           <li><a href="select_date_sales.php">ยอดขายระวังวันที่</a></li>
+          <li><a href="report_orders_select_date.php">รายงานการสั่งซื้อ</a></li>
         </ul>
       </li>
     </ul>
