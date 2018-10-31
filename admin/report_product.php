@@ -77,7 +77,22 @@ $(document).ready(function(){
 
 
 <body>
-    <?php include("menu.php"); ?>
+    <?php include("menu.php"); 
+
+                function DateThai($strDate)
+                {
+                  $strYear = date("Y",strtotime($strDate))+543;
+                  $strMonth= date("n",strtotime($strDate));
+                  $strDay= date("j",strtotime($strDate));
+                  $strHour= date("H",strtotime($strDate));
+                  $strMinute= date("i",strtotime($strDate));
+                  $strSeconds= date("s",strtotime($strDate));
+                  $strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
+                  $strMonthThai=$strMonthCut[$strMonth];
+                  return "$strDay $strMonthThai $strYear";
+                }
+    
+    ?>
     <div class="container">
 
     <div class="col-md-12">
@@ -88,6 +103,9 @@ $(document).ready(function(){
                             <span class="glyphicon glyphicon-registration-mark" aria-hidden="true"></span>รายงานสินค้าขายดี</h4>
                     </div>
                 </div>
+                <center>
+                    รายงานสินค้าขายดีระหว่างวันที่ <?=DateThai($datestart)?> ถึงวันที่ <?=DateThai($dateend)?>
+                </center>
                 <!-- content here -->
                 <div id="chart-container">
                     <canvas id="mycanvas" height="25vw" width="80vw"></canvas>
