@@ -48,7 +48,7 @@ if (!$objCon) {
   $objQuery = mysqli_query($objCon,$strSQL);
   $objResult = $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
 
-
+  $fin_status = $objResult["fin_status"];
 
   function DateThai($strDate)
 	{
@@ -162,7 +162,14 @@ while($objResult2 = mysqli_fetch_array($objQuery2,MYSQLI_ASSOC))
         <?php echo number_format($SumTotal,2);?>
         บาท</div>
         <div align="right">
+            <?php 
+              if ($fin_status == 2){?>
+                  <a class="btn btn-info" disabled >ชำระเงินแล้ว</a>
+              
+            <?php }  else { ?>
+            
                     <a href="add_payment.php?StrOrderID=<?php echo $_GET["StrOrderID"];?>" class="btn btn-info">อัพโหลดหลักฐานการชำรเงิน</a>
+            <?php } ?>
                     <br>
                 </div>
         <?php
