@@ -49,7 +49,7 @@
 
       <?php 
         require_once 'connect.php';
-        $sql="SELECT product.p_name,product.p_pic,product.p_id,sum(order_detail.qty) AS sumqty FROM `orders` INNER JOIN order_detail ON orders.OrderID = order_detail.OrderID INNER JOIN product ON product.p_id = order_detail.p_id WHERE orders.OrderDate LIKE '%".$date."%' GROUP BY order_detail.p_id";
+        $sql="SELECT product.p_name,product.p_pic,product.p_id,sum(order_detail.qty) AS sumqty FROM `orders` INNER JOIN order_detail ON orders.OrderID = order_detail.OrderID INNER JOIN product ON product.p_id = order_detail.p_id WHERE orders.OrderDate LIKE '%".$date."%' AND orders.fin_status = 2 GROUP BY order_detail.p_id";
         $result=$conn->query($sql);
       ?>
 

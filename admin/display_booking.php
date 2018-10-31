@@ -35,7 +35,7 @@
         <?php
         $customerID = $_SESSION['person_id']; 
         require_once 'connect.php';
-        $sql="SELECT * FROM orders INNER JOIN customer ON orders.customer_id = customer.c_id ORDER BY `orders`.`OrderID` DESC";
+        $sql="SELECT * FROM orders INNER JOIN customer ON orders.customer_id = customer.c_id WHERE orders.fin_status != 2 ORDER BY `orders`.`OrderID` ASC";
         $result=$conn->query($sql);
       ?>
 
