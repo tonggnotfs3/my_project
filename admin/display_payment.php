@@ -98,6 +98,8 @@
                   <option value="3" <?php if($row['pay_status_id']==3 )echo "selected" ?>>ตรวจสอบแล้ว</option>
                 </select>
                 <input type="text" class="form-control" name="description" id="description" value=<?php echo $row['description'];?>>
+                <input type="hidden" class="form-control" name="pay_booking_id" id="pay_booking_id" value=<?php echo $row['pay_booking_id'];?>>
+                <input type="hidden" class="form-control" name="pay_type" id="pay_type" value=<?php echo $row['pay_type'];?>>
                 <input class="btn btn-info" type="submit" value="บันทึก"></td>
                 </form>
               </td>
