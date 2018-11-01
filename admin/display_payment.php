@@ -46,7 +46,7 @@
 
     <?php 
         require_once 'connect.php';
-        $sql="SELECT * FROM `payment`,pay_status,pay_type,customer WHERE payment.pay_status = pay_status.pay_status_id AND payment.pay_type = pay_type.pay_type_id AND payment.pay_cus_id = customer.c_id AND payment.pay_delete = 1 AND payment.pay_status != 3  ORDER BY `payment`.`pay_id` DESC";
+        $sql="SELECT * FROM `payment`,pay_status,pay_type,customer,orders WHERE payment.pay_status = pay_status.pay_status_id AND payment.pay_type = pay_type.pay_type_id AND payment.pay_cus_id = customer.c_id AND payment.pay_delete = 1 AND orders.OrderID = payment.pay_booking_id AND payment.pay_status != 3 ORDER BY `payment`.`pay_id` DESC";
         $result=$conn->query($sql);
       ?>
 
@@ -66,6 +66,7 @@
               <th>นามสกุล</th>
               <th>ประเภทการชำระเงิน</th>
               <th>หลักฐาน</th>
+              <th>จำนวนเงินทั้งสิ้น(บาท)</th>
               <th>สถานะ</th>
             </tr>
           </thead>
@@ -87,6 +88,9 @@
               <td>
                 <img src="<?php echo "../".$row['pay_pic']?>" class="img-thumbnail" alt="Produc picture" data-toggle="modal"
                   data-target="#display_p_pic" style="width:50px;height:50px;" onclick="receipt_click('<?php echo $row['pay_pic'];?>')">
+              </td>
+              <td style="padding-left:120px">
+                <?php echo number_format($row['sumtotal']);?>
               </td>
               <td>
               <form action="../sql/update_status_payment.php" method="post">
