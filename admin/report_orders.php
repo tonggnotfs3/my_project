@@ -37,7 +37,7 @@
 
       <?php 
         require_once 'connect.php';
-        $sql="SELECT *, COUNT(OrderDate) AS numOrders FROM orders WHERE orders.OrderDate BETWEEN '$datestart' AND '$dateend' AND orders.fin_status = 2 GROUP BY OrderDate";
+        $sql="SELECT *, COUNT(OrderDate) AS numOrders, SUM(sumtotal) as sumtotal FROM orders WHERE orders.OrderDate BETWEEN '$datestart' AND '$dateend' AND orders.fin_status = 2 GROUP BY OrderDate";
         $result=$conn->query($sql);
 
         function DateThai($strDate)
@@ -63,7 +63,7 @@
           </div>
         </div>
         <center>
-        <h3>รายงานยอดขาย</h3>
+        <h3>รายงานการสั่งซื้อ</h3>
         <h3>ระหว่างวันที่ <?=DateThai($datestart)?> ถึงวันที่ <?=DateThai($dateend)?></h3>
         </center>
         <table class="table table-hover">
@@ -71,7 +71,8 @@
             <tr>
               <th>วันที่</th>
               <th>จำนวนการสั่งสินค้า</th>
-              <th>สินค้าที่ถูกสั่ง</th>
+              <th>จำนวนเงินทั้งสิ้น(บาท)</th>
+              <th>สินค้าที่ถูกสั่ง(ครั้ง)</th>
             </tr>
           </thead>
           <tbody>
@@ -82,6 +83,9 @@
               </td>
               <td>
                 <?php echo $row['numOrders'];?>
+              </td>
+              <td>
+                <?php echo $row['sumtotal'];?>
               </td>
               <td>
               <a href=report_orders_detail.php?date=<?php echo $row['OrderDate'];?> class="btn btn-info">ลาลละเอียด</a>
