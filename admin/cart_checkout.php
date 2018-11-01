@@ -114,6 +114,7 @@ if (!$objCon) {
         <div align="right">
           <form class="form-inline" name="form1" method="post" action="cart_save_checkout.php">
             <div class="form-group">
+            <input type="hidden" class="form-control" name="sumtotal" id="sumtotal" value=<?php echo number_format($SumTotal,2);?>>
               <label for="p_id">รหัสลูกค้า:</label>
               <input type="text" class="form-control" name="p_id" id="p_id">
               <label for="p_id">กำหนดส่งสินค้า:</label>
