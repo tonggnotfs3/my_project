@@ -72,7 +72,7 @@ div.content{
               <th>ชื่อผู้ใช้</th>
               <th>ชื่อผู้ติดต่อ</th>
               <th>นามสกุล</th>
-              <th>ที่อยู่</th>
+              <th style="text-align: center">ที่อยู่</th>
               <th>เบอร์โทร</th>
               <th>แก้ไข</th>
               <th>ลบ</th>

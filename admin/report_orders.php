@@ -81,11 +81,11 @@
               <td>
                 <?php echo $row['OrderDate'];?>
               </td>
-              <td>
-                <?php echo $row['numOrders'];?>
+              <td style="padding-left:10%">
+                <?php echo number_format($row['numOrders']);?>
               </td>
-              <td>
-                <?php echo $row['sumtotal'];?>
+              <td style="padding-left:10%">
+                <?php echo number_format($row['sumtotal']);?>
               </td>
               <td>
               <a href=report_orders_detail.php?date=<?php echo $row['OrderDate'];?> class="btn btn-info">ลาลละเอียด</a>

@@ -100,7 +100,7 @@
               <img src="<?php echo "../".$row['p_pic']?>" class="img-thumbnail" alt="Produc picture" data-toggle="modal"
                   data-target="#display_p_pic" style="width:50px;height:50px;" onclick="receipt_click('<?php echo $row['p_pic'];?>')">
               </td>
-              <td align="right">
+              <td style="padding-left:10%">
                 <?php echo number_format($row['sumqty']);?>
               </td>
             </tr>
