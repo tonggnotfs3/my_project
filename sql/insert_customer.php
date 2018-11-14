@@ -13,7 +13,8 @@ $amphur = $_POST['amphur'];
 $districts = $_POST['districts'];
 $tel = $_POST['tel'];
 
-		$sql = "INSERT INTO `customer` (`username`, `password`, `fristname`, `lastname`, `address`, `province`, `amphur`, `districts`, `tel`, `department`, `c_status`) VALUES ('$username', '$password', '$fristname', '$lastname', '$address', '$province', '$amphur', '$districts', '$tel', '$department', '1');";
+		$sql = "INSERT INTO `customer` (`username`, `password`, `fristname`, `lastname`, `address`, `province`, `amphur`, `districts`, `tel`, `department`, `c_status`) 
+		VALUES ('$username', '$password', '$fristname', '$lastname', '$address', '$province', '$amphur', '$districts', '$tel', '$department', '1');";
 		$data = mysqli_query($conn,$sql);
 
 

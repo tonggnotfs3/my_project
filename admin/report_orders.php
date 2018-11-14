@@ -70,16 +70,16 @@
           <thead>
             <tr>
               <th>วันที่</th>
-              <th>จำนวนการสั่งสินค้า</th>
+              <th>จำนวนการสั่งสินค้า(ครั้ง)</th>
               <th>จำนวนเงินทั้งสิ้น(บาท)</th>
-              <th>สินค้าที่ถูกสั่ง(ครั้ง)</th>
+              <th>สินค้าที่ถูกสั่ง</th>
             </tr>
           </thead>
           <tbody>
             <?php while($row=$result->fetch_assoc()){?>
             <tr>
               <td>
-                <?php echo $row['OrderDate'];?>
+                <?php echo DateThai($row['OrderDate']);?>
               </td>
               <td style="padding-left:10%">
                 <?php echo number_format($row['numOrders']);?>
@@ -88,7 +88,7 @@
                 <?php echo number_format($row['sumtotal']);?>
               </td>
               <td>
-              <a href=report_orders_detail.php?date=<?php echo $row['OrderDate'];?> class="btn btn-info">ลาลละเอียด</a>
+              <a href=report_orders_detail.php?date=<?php echo $row['OrderDate'];?> class="btn btn-info">รายละเอียด</a>
               </td>
             </tr>
             <?php } ?>
