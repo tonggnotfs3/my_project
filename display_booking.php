@@ -52,7 +52,7 @@
                         <tr>
                             <th>รหัสการจอง</th>
                             <th>วันที่จอง</th>
-                            <th>ลายละเอียด</th>
+                            <th>รายละเอียด</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -65,7 +65,7 @@
                                 <?php echo $row['OrderDate'];?>
                             </td>
                             <td>
-                                <a href="display_booking_detail.php?StrOrderID=<?php echo $row['OrderID'];?>" class="btn btn-info">ลายละเอียด</a>
+                                <a href="display_booking_detail.php?StrOrderID=<?php echo $row['OrderID'];?>" class="btn btn-info">รายละเอียด</a>
                             </td>
                         </tr>
                         <?php } ?>
